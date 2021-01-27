@@ -1,0 +1,1625 @@
+@charset "UTF-8";
+/*PÁGINA DE ADMINISTRADORES*/
+body {
+  background-color: lavender;
+  min-width: 1200px;
+}
+
+.fila_normal {
+  font-weight: '100';
+  color: black;
+  background-color: white;
+}
+
+.fila_resaltada {
+  font-weight: '200';
+  color: black;
+  background-color: #dafbff;
+}
+
+.ver {
+  display: block;
+}
+
+.ocultar {
+  display: none;
+}
+
+.desactivar {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.activar {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.centrar {
+  height: 100%;
+  text-align: center;
+}
+
+.foto {
+  height: 173px;
+}
+
+.editable {
+  height: 200px;
+}
+
+/* ÁREA DE DATOS DEL USUARIO CONECTADO */
+header {
+  background-color: #007bff;
+}
+
+header #datos_usuario_conectado {
+  width: 85%;
+  margin: auto;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.5em;
+}
+
+header #datos_usuario_conectado #AteneaIcono {
+  width: 80px;
+}
+
+header #datos_usuario_conectado #saludo {
+  padding-right: 0.5em;
+  padding-top: 0.4em;
+  margin-top: 0.5em;
+}
+
+header #datos_usuario_conectado #ADM_nombre {
+  font-style: italic;
+  margin-top: 0.5em;
+  padding-top: 0.4em;
+}
+
+header #datos_usuario_conectado #contenedor_logout {
+  text-align: right;
+  padding-bottom: 0.8em;
+}
+
+header #datos_usuario_conectado #contenedor_logout a {
+  color: white;
+  font-size: 0.8em;
+}
+
+/* GESTIÓN DE USUARIOS */
+/*ÁREA DE HERRAMIENTAS*/
+#USR_tabla_seccion_herramientas {
+  background-color: lavender;
+  font-family: "Kanit", sans-serif;
+  padding: 1em;
+}
+
+#USR_tabla_seccion_herramientas #filtrar {
+  margin: 0px 1em;
+}
+
+#USR_tabla_seccion_herramientas #btn_editar_insertar_usuario {
+  height: 100%;
+}
+
+/*ÁREA DE LA TABLA DE USUARIOS*/
+#USR_contenedor_tabla {
+  background-color: lavender;
+  padding-bottom: 1.5em;
+}
+
+#USR_contenedor_tabla #USR_encabezado_tabla {
+  text-align: center;
+  padding: 0.5em 0%;
+  color: black;
+  font-family: "Kanit", sans-serif;
+  font-size: 1.5em;
+}
+
+#USR_contenedor_tabla #USR_tabla {
+  margin: 0% 1%;
+  background-color: #fff6da;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 5px;
+          box-shadow: 5px 5px 15px 5px;
+  overflow: hidden;
+}
+
+#USR_contenedor_tabla #USR_tabla #USR_fila_encabezados {
+  font-family: "Kanit", sans-serif;
+  font-weight: bold;
+  font-size: 0.8em;
+  border-bottom: 1px solid indigo;
+}
+
+#USR_contenedor_tabla #USR_tabla #USR_fila_encabezados .USR_col_enc {
+  text-align: center;
+}
+
+#USR_contenedor_tabla #USR_tabla #USR_fila_encabezados #USR_col_enc_codigo {
+  /*3,7,12,11,7,12,9,15,4,5,7,4,4*/
+  width: 3%;
+}
+
+#USR_contenedor_tabla #USR_tabla #USR_fila_encabezados #USR_col_enc_foto {
+  width: 7%;
+}
+
+#USR_contenedor_tabla #USR_tabla #USR_fila_encabezados #USR_col_enc_nombre {
+  width: 12%;
+}
+
+#USR_contenedor_tabla #USR_tabla #USR_fila_encabezados #USR_col_enc_apellidos {
+  width: 11%;
+}
+
+#USR_contenedor_tabla #USR_tabla #USR_fila_encabezados #USR_col_enc_usuario {
+  width: 7%;
+}
+
+#USR_contenedor_tabla #USR_tabla #USR_fila_encabezados #USR_col_enc_email {
+  width: 12%;
+}
+
+#USR_contenedor_tabla #USR_tabla #USR_fila_encabezados #USR_col_enc_fechaAlta {
+  width: 9%;
+}
+
+#USR_contenedor_tabla #USR_tabla #USR_fila_encabezados #USR_col_enc_direccion {
+  width: 15%;
+}
+
+#USR_contenedor_tabla #USR_tabla #USR_fila_encabezados #USR_col_enc_cp {
+  width: 4%;
+}
+
+#USR_contenedor_tabla #USR_tabla #USR_fila_encabezados #USR_col_enc_telefono {
+  width: 5%;
+}
+
+#USR_contenedor_tabla #USR_tabla #USR_fila_encabezados #USR_col_enc_fechaNac {
+  width: 7%;
+}
+
+#USR_contenedor_tabla #USR_tabla #USR_fila_encabezados #USR_col_enc_btn_editar {
+  width: 4%;
+}
+
+#USR_contenedor_tabla #USR_tabla #USR_fila_encabezados #USR_col_enc_btn_eliminar {
+  width: 4%;
+}
+
+#USR_contenedor_tabla #USR_tabla .USR_fila_registro_usuario .USR_col {
+  border-bottom: 1px solid black;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1em;
+}
+
+#USR_contenedor_tabla #USR_tabla .USR_fila_registro_usuario .USR_col_codigo {
+  text-align: center;
+  font-weight: bold;
+  width: 3%;
+}
+
+#USR_contenedor_tabla #USR_tabla .USR_fila_registro_usuario .USR_col_foto {
+  width: 7%;
+  text-align: center;
+}
+
+#USR_contenedor_tabla #USR_tabla .USR_fila_registro_usuario .USR_col_foto .foto_usuario_inline {
+  height: 100px;
+}
+
+#USR_contenedor_tabla #USR_tabla .USR_fila_registro_usuario .USR_col_nombre {
+  width: 12%;
+}
+
+#USR_contenedor_tabla #USR_tabla .USR_fila_registro_usuario .USR_col_apellidos {
+  width: 11%;
+}
+
+#USR_contenedor_tabla #USR_tabla .USR_fila_registro_usuario .USR_col_usuario {
+  width: 7%;
+}
+
+#USR_contenedor_tabla #USR_tabla .USR_fila_registro_usuario .USR_col_email {
+  width: 12%;
+}
+
+#USR_contenedor_tabla #USR_tabla .USR_fila_registro_usuario .USR_col_fechaAlta {
+  text-align: center;
+  width: 9%;
+}
+
+#USR_contenedor_tabla #USR_tabla .USR_fila_registro_usuario .USR_col_direccion {
+  width: 15%;
+}
+
+#USR_contenedor_tabla #USR_tabla .USR_fila_registro_usuario .USR_col_cp {
+  text-align: center;
+  width: 4%;
+}
+
+#USR_contenedor_tabla #USR_tabla .USR_fila_registro_usuario .USR_col_telefono {
+  text-align: center;
+  width: 5%;
+}
+
+#USR_contenedor_tabla #USR_tabla .USR_fila_registro_usuario .USR_col_fechaNac {
+  text-align: center;
+  width: 7%;
+}
+
+#USR_contenedor_tabla #USR_tabla .USR_fila_registro_usuario .USR_col_btn_editar {
+  text-align: center;
+  width: 4%;
+}
+
+#USR_contenedor_tabla #USR_tabla .USR_fila_registro_usuario .USR_col_btn_eliminar {
+  text-align: center;
+  width: 4%;
+}
+
+/*       GESTIÓN DE MEDIOS       */
+/*                               */
+/*      (SECCIÓN DE TEXTOS)      */
+#textos {
+  background-color: lavender;
+  padding: 0px 0px 1em 0px;
+}
+
+#textos #textos_contenedor_titulos h3 {
+  color: black;
+  text-align: center;
+  padding: 0.5em 0%;
+  margin-bottom: 0%;
+  font-family: "Kanit", sans-serif;
+  font-size: 1.5em;
+}
+
+#textos .textos_contenedor_herramientas {
+  margin: 0%;
+  padding: 0.5em;
+  font-family: "Kanit", sans-serif;
+}
+
+#textos .textos_contenedor_herramientas button {
+  margin-left: 1em;
+}
+
+#textos #textos_contenedor_datos {
+  margin: 0%;
+}
+
+#textos #textos_contenedor_datos #tabla_textos_contenedor {
+  padding: 0% 0.5em;
+}
+
+#textos #textos_contenedor_datos #tabla_textos_contenedor #tabla_textos {
+  margin: auto;
+  background-color: #fff6da;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 5px;
+          box-shadow: 5px 5px 15px 5px;
+  overflow: hidden;
+}
+
+#textos #textos_contenedor_datos #tabla_textos_contenedor #tabla_textos #tabla_textos_encabezado {
+  font-family: "Kanit", sans-serif;
+  font-weight: bold;
+  font-size: 0.8em;
+  border-bottom: 1px solid indigo;
+}
+
+#textos #textos_contenedor_datos #tabla_textos_contenedor #tabla_textos #tabla_textos_encabezado .tabla_textos_col_enc {
+  text-align: center;
+}
+
+#textos #textos_contenedor_datos #tabla_textos_contenedor #tabla_textos #tabla_textos_encabezado #tabla_textos_col_enc_codigo {
+  width: 4%;
+}
+
+#textos #textos_contenedor_datos #tabla_textos_contenedor #tabla_textos #tabla_textos_encabezado #tabla_textos_col_enc_nombre {
+  width: 32%;
+}
+
+#textos #textos_contenedor_datos #tabla_textos_contenedor #tabla_textos #tabla_textos_encabezado #tabla_textos_col_enc_descripcion {
+  width: 50%;
+}
+
+#textos #textos_contenedor_datos #tabla_textos_contenedor #tabla_textos #tabla_textos_encabezado #tabla_textos_col_enc_btn_editar {
+  width: 7%;
+}
+
+#textos #textos_contenedor_datos #tabla_textos_contenedor #tabla_textos #tabla_textos_encabezado #tabla_textos_col_enc_btn_eliminar {
+  width: 7%;
+}
+
+#textos #textos_contenedor_datos #tabla_textos_contenedor #tabla_textos .fila_registro_texto .tabla_textos_col {
+  border-bottom: 1px solid black;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1em;
+}
+
+#textos #textos_contenedor_datos #tabla_textos_contenedor #tabla_textos .fila_registro_texto .tabla_textos_col_codigo {
+  text-align: center;
+  font-weight: bold;
+  width: 4%;
+}
+
+#textos #textos_contenedor_datos #tabla_textos_contenedor #tabla_textos .fila_registro_texto .tabla_textos_col_nombre {
+  width: 32%;
+}
+
+#textos #textos_contenedor_datos #tabla_textos_contenedor #tabla_textos .fila_registro_texto .tabla_textos_col_descripcion {
+  width: 50%;
+}
+
+#textos #textos_contenedor_datos #tabla_textos_contenedor #tabla_textos .fila_registro_texto .tabla_textos_col_btn_editar {
+  text-align: center;
+  width: 7%;
+}
+
+#textos #textos_contenedor_datos #tabla_textos_contenedor #tabla_textos .fila_registro_texto .tabla_textos_col_btn_eliminar {
+  text-align: center;
+  width: 7%;
+}
+
+#textos #textos_contenedor_datos #textos_data_contenedor {
+  padding: 0% 0.5em;
+  font-family: "Kanit", sans-serif;
+}
+
+#textos #textos_contenedor_datos #textos_data_contenedor .contenedor_interno {
+  margin: 0%;
+  padding: 0% 0.5em;
+}
+
+#textos #textos_contenedor_datos #textos_data_contenedor .contenedor_interno label {
+  margin: 0%;
+  color: black;
+}
+
+#textos #textos_contenedor_datos #textos_data_contenedor .contenedor_interno input,
+#textos #textos_contenedor_datos #textos_data_contenedor .contenedor_interno textarea {
+  margin: 0%;
+}
+
+/*      GESTIÓN DE MEDIOS        */
+/*                               */
+/*    (SECCIÓN DE IMÁGENES)      */
+#imagenes {
+  background-color: lavender;
+  padding: 0px 0px 1em 0px;
+}
+
+#imagenes #imagenes_contenedor_titulos h3 {
+  color: black;
+  text-align: center;
+  padding: 0.5em 0%;
+  margin-bottom: 0%;
+  font-family: "Kanit", sans-serif;
+  font-size: 1.5em;
+}
+
+#imagenes .imagenes_contenedor_herramientas {
+  margin: auto;
+  padding: 0.5em 1em;
+  font-family: "Kanit", sans-serif;
+}
+
+#imagenes .imagenes_contenedor_herramientas #contenedor_botones {
+  padding: 0%;
+}
+
+#imagenes .imagenes_contenedor_herramientas div:last-child {
+  padding: 0%;
+  text-align: right;
+}
+
+#imagenes #contenedor_cartas_imagenes {
+  margin: 0%;
+  padding: 0% 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#imagenes #contenedor_cartas_imagenes .card {
+  margin: 0.5em;
+}
+
+#imagenes #contenedor_cartas_imagenes .card .card-body .card-title {
+  font-family: "Kanit", sans-serif;
+}
+
+#imagenes #contenedor_cartas_imagenes .card .card-body .card-text {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+#imagenes #contenedor_cartas_imagenes .card .card-body #imagen_denominacion {
+  margin: 0px 0px 0.2em 0px;
+  font-family: "Kanit", sans-serif;
+}
+
+#imagenes #contenedor_cartas_imagenes .card .card-body #imagen_descripcion {
+  margin: 0.2em 0px 0.2em 0px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+#imagenes #contenedor_cartas_imagenes .card .card-body .carta_contenedor_botones {
+  margin: 0%;
+  font-family: "Kanit", sans-serif;
+}
+
+/*       GESTIÓN DE MEDIOS       */
+/*                               */
+/*      (SECCIÓN DE VÍDEOS)      */
+#videos {
+  background-color: lavender;
+  padding: 0px 0px 1em 0px;
+}
+
+#videos #videos_contenedor_titulos h3 {
+  color: black;
+  text-align: center;
+  padding: 0.5em 0%;
+  margin-bottom: 0%;
+  font-family: "Kanit", sans-serif;
+  font-size: 1.5em;
+}
+
+#videos .videos_contenedor_herramientas {
+  margin: auto;
+  padding: 0.5em 1em;
+  font-family: "Kanit", sans-serif;
+}
+
+#videos .videos_contenedor_herramientas #contenedor_botones {
+  padding: 0%;
+}
+
+#videos .videos_contenedor_herramientas div:last-child {
+  padding: 0%;
+  text-align: right;
+}
+
+#videos #contenedor_cartas_videos {
+  margin: 0%;
+  padding: 0% 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#videos #contenedor_cartas_videos .card {
+  margin: 0.5em;
+}
+
+#videos #contenedor_cartas_videos .card .card-body .card-title {
+  font-family: "Kanit", sans-serif;
+}
+
+#videos #contenedor_cartas_videos .card .card-body .card-text {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+#videos #contenedor_cartas_videos .card .card-body #video_denominacion {
+  margin: 0px 0px 0.2em 0px;
+  font-family: "Kanit", sans-serif;
+}
+
+#videos #contenedor_cartas_videos .card .card-body #video_descripcion {
+  margin: 0.2em 0px 0.2em 0px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+#videos #contenedor_cartas_videos .card .card-body .carta_contenedor_botones {
+  margin: 0%;
+  font-family: "Kanit", sans-serif;
+}
+
+/*       GESTIÓN DE MEDIOS       */
+/*                               */
+/*      (SECCIÓN DE AUDIOS)      */
+#audios {
+  background-color: lavender;
+  padding: 0px 0px 1em 0px;
+}
+
+#audios #audios_contenedor_titulos h3 {
+  color: black;
+  text-align: center;
+  padding: 0.5em 0%;
+  margin-bottom: 0%;
+  font-family: "Kanit", sans-serif;
+  font-size: 1.5em;
+}
+
+#audios .audios_contenedor_herramientas {
+  width: 85%;
+  margin: auto;
+  padding: 0.5em;
+  font-family: "Kanit", sans-serif;
+}
+
+#audios .audios_contenedor_herramientas #contenedor_botones {
+  padding: 0%;
+}
+
+#audios .audios_contenedor_herramientas div:last-child {
+  padding: 0%;
+  text-align: right;
+}
+
+#audios #tabla_audios_contenedor {
+  margin: 0%;
+  padding: 0% 0.5em;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios {
+  width: 85%;
+  margin: auto;
+  background-color: #fff6da;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 5px;
+          box-shadow: 5px 5px 15px 5px;
+  overflow: hidden;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios #tabla_audios_encabezado {
+  font-family: "Kanit", sans-serif;
+  font-weight: bold;
+  font-size: 0.8em;
+  border-bottom: 1px solid indigo;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios #tabla_audios_encabezado .tabla_audios_col_enc {
+  text-align: center;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios #tabla_audios_encabezado #tabla_audios_col_enc_codigo {
+  width: 4%;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios #tabla_audios_encabezado #tabla_audios_col_enc_nombre {
+  width: 18%;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios #tabla_audios_encabezado #tabla_audios_col_enc_descripcion {
+  width: 38%;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios #tabla_audios_encabezado #tabla_audios_col_enc_player {
+  width: 26%;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios #tabla_audios_encabezado #tabla_audios_col_enc_btn_izdo {
+  width: 7%;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios #tabla_audios_encabezado #tabla_audios_col_enc_btn_dcho {
+  width: 7%;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios .fila_registro_audio .tabla_audios_col {
+  border-bottom: 1px solid black;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1em;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios .fila_registro_audio .tabla_audios_col_codigo {
+  text-align: center;
+  font-weight: bold;
+  width: 4%;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios .fila_registro_audio .tabla_audios_col_nombre {
+  width: 18%;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios .fila_registro_audio .tabla_audios_col_nombre .audio_denominacion {
+  margin: 0px;
+  padding: 0px;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios .fila_registro_audio .tabla_audios_col_descripcion {
+  width: 38%;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios .fila_registro_audio .tabla_audios_col_descripcion .audio_descripcion {
+  margin: 0px;
+  padding: 0px;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios .fila_registro_audio .tabla_audios_col_player {
+  width: 26%;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios .fila_registro_audio .tabla_audios_col_player #audio_player {
+  width: 100%;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios .fila_registro_audio .tabla_audios_col_btn_izdo {
+  text-align: center;
+  width: 7%;
+}
+
+#audios #tabla_audios_contenedor #tabla_audios .fila_registro_audio .tabla_audios_col_btn_dcho {
+  text-align: center;
+  width: 7%;
+}
+
+/* GESTIÓN DE TESTS */
+#tests {
+  background-color: lavender;
+  padding: 0px 0px 1em 0px;
+}
+
+#tests #tests_contenedor_titulos h3 {
+  color: black;
+  text-align: center;
+  padding: 0.5em 0%;
+  margin-bottom: 0%;
+  font-family: "Kanit", sans-serif;
+  font-size: 1.5em;
+}
+
+#tests #contenedor_tests {
+  margin: 0%;
+}
+
+#tests #contenedor_tests #contenedor_tabla_tests .tests_contenedor_herramientas {
+  width: 98%;
+  margin: auto;
+  padding: 0.5em 0%;
+  font-family: "Kanit", sans-serif;
+}
+
+#tests #contenedor_tests #contenedor_tabla_tests .tests_contenedor_herramientas #btn_nuevo_test {
+  margin-right: 0.5em;
+}
+
+#tests #contenedor_tests #contenedor_tabla_tests #tabla_tests {
+  width: 98%;
+  margin: auto;
+  background-color: #fff6da;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 5px;
+          box-shadow: 5px 5px 15px 5px;
+  overflow: hidden;
+}
+
+#tests #contenedor_tests #contenedor_tabla_tests #tabla_tests #tabla_tests_encabezado {
+  font-family: "Kanit", sans-serif;
+  font-weight: bold;
+  font-size: 0.8em;
+  border-bottom: 1px solid black;
+}
+
+#tests #contenedor_tests #contenedor_tabla_tests #tabla_tests #tabla_tests_encabezado .tabla_tests_col_enc {
+  text-align: center;
+  background-color: white;
+}
+
+#tests #contenedor_tests #contenedor_tabla_tests #tabla_tests #tabla_tests_encabezado #tabla_tests_col_enc_codigo {
+  width: 4%;
+}
+
+#tests #contenedor_tests #contenedor_tabla_tests #tabla_tests #tabla_tests_encabezado #tabla_tests_col_enc_nombre {
+  width: 80%;
+}
+
+#tests #contenedor_tests #contenedor_tabla_tests #tabla_tests #tabla_tests_encabezado #tabla_tests_col_enc_btn_editar {
+  width: 9%;
+}
+
+#tests #contenedor_tests #contenedor_tabla_tests #tabla_tests #tabla_tests_encabezado #tabla_tests_col_enc_btn_eliminar {
+  width: 7%;
+}
+
+#tests #contenedor_tests #contenedor_tabla_tests #tabla_tests .fila_registro_test {
+  border-bottom: 1px solid;
+}
+
+#tests #contenedor_tests #contenedor_tabla_tests #tabla_tests .fila_registro_test .tabla_tests_col {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1em;
+  background-color: white;
+}
+
+#tests #contenedor_tests #contenedor_tabla_tests #tabla_tests .fila_registro_test .tabla_tests_col_codigo {
+  text-align: center;
+  font-weight: bold;
+  width: 4%;
+}
+
+#tests #contenedor_tests #contenedor_tabla_tests #tabla_tests .fila_registro_test .tabla_tests_col_nombre {
+  width: 80%;
+}
+
+#tests #contenedor_tests #contenedor_tabla_tests #tabla_tests .fila_registro_test .tabla_tests_col_btn_editar {
+  text-align: center;
+  width: 9%;
+}
+
+#tests #contenedor_tests #contenedor_tabla_tests #tabla_tests .fila_registro_test .tabla_tests_col_btn_eliminar {
+  text-align: center;
+  width: 7%;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_editables {
+  margin-bottom: 0.5em;
+  font-family: "Kanit", sans-serif;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_editables label {
+  color: black;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_editables input {
+  width: 100%;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_encabezado {
+  background-color: #007bff;
+  padding-bottom: 0.5em;
+  font-family: "Kanit", sans-serif;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_encabezado #encabezado_header {
+  background-color: #007bff;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_encabezado #encabezado_header h3 {
+  color: white;
+  font-size: 1.5em;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_encabezado #encabezado_header button {
+  height: 2em;
+  margin: 0.2em;
+  padding: 0%;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_encabezado #texto_test {
+  margin: 0.2em 0%;
+  width: 100%;
+  border-radius: 3px;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_encabezado .contenedor_elemento_encabezado {
+  position: relative;
+  background-color: white;
+  /*padding-top: 1%;
+                    padding-bottom: 1%;*/
+  border: 1px solid grey;
+  border-radius: 3px;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_encabezado .contenedor_elemento_encabezado .mini_barra_herramientas {
+  position: absolute;
+  z-index: 100;
+  top: 0px;
+  right: 0px;
+  opacity: 20%;
+  background-color: #c7b6aa;
+  border-radius: 0px 0px 0px 5px;
+  border-left: 1px solid #383838;
+  border-bottom: 1px solid #383838;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_encabezado .contenedor_elemento_encabezado .mini_barra_herramientas:hover {
+  opacity: 75%;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_encabezado .contenedor_elemento_encabezado .contenedor_medio {
+  padding: 0.5em;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_encabezado .contenedor_elemento_encabezado .contenedor_medio .posicionador {
+  text-align: center;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_encabezado .contenedor_elemento_encabezado .contenedor_medio:has(img),
+#tests #contenedor_tests #contenedor_test #contenedor_encabezado .contenedor_elemento_encabezado .contenedor_medio:has(video) {
+  height: 200px;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_opciones {
+  background-color: #007bff;
+  padding: 0%;
+  font-family: "Kanit", sans-serif;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_opciones .container {
+  margin: 0%;
+  padding: 0.25em 0%;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_opciones .container .contenedor_radio_opcion {
+  margin: auto 0.5em;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_opciones .container .contenedor_imagen_opcion {
+  background-color: #85f3ff;
+  position: relative;
+  overflow: hidden;
+  resize: both;
+  min-width: 50px;
+  min-height: 50px;
+  padding: 0%;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_opciones .container .contenedor_imagen_opcion .mini_barra_herramientas_opcion {
+  position: absolute;
+  z-index: 100;
+  top: 0px;
+  right: 0px;
+  opacity: 20%;
+  padding-right: 2px;
+  background-color: #c7b6aa;
+  border-radius: 0px 0px 0px 5px;
+  border-left: 1px solid #383838;
+  border-bottom: 1px solid #383838;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_opciones .container .contenedor_imagen_opcion .mini_barra_herramientas_opcion:hover {
+  opacity: 75%;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_opciones .container .contenedor_imagen_opcion img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_opciones .container .contenedor_label_opcion {
+  margin: auto 0%;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_opciones .container .contenedor_label_opcion textarea {
+  width: 100%;
+  resize: both;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_opciones .container .GIO_contenedor {
+  background-color: #c4c3c3;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_opciones .container .GIO_contenedor .GIO_botonera {
+  margin: 0% 0% 0.25em 0%;
+  padding: 0% 0.5em;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_opciones .container .GIO_contenedor .GIO_botonera button {
+  margin: 0% 0.25em;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_opciones .container .GIO_contenedor .GIO_repositorio {
+  margin: 0%;
+  padding: 0% 0.5em;
+}
+
+#tests #contenedor_tests #contenedor_test #contenedor_opciones .container .GIO_contenedor .GIO_repositorio #GIO_imagen_opcion_carta {
+  height: 6em;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/* GESTIÓN DE BATERÍAS */
+#baterias {
+  background-color: lavender;
+  padding: 0px 0px 1em 0px;
+}
+
+#baterias #baterias_contenedor_titulos h3 {
+  color: black;
+  text-align: center;
+  padding: 0.5em 0%;
+  margin-bottom: 0%;
+  font-family: "Kanit", sans-serif;
+  font-size: 1.5em;
+}
+
+#baterias #baterias_contenedor_herramientas {
+  width: 95%;
+  margin: auto;
+  padding: 0.5em;
+  font-family: "Kanit", sans-serif;
+}
+
+#baterias #baterias_contenedor_herramientas button {
+  margin: 0px 0.5em;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests {
+  margin: 0%;
+  padding: 0% 0.5em;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests #BT_tabla_baterias_tests {
+  width: 90%;
+  margin: auto;
+  background-color: #fff6da;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 5px;
+          box-shadow: 5px 5px 15px 5px;
+  overflow: hidden;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests #BT_tabla_baterias_tests #BT_fila_encabezados {
+  font-family: "Kanit", sans-serif;
+  font-weight: bold;
+  font-size: 0.8em;
+  border-bottom: 1px solid indigo;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests #BT_tabla_baterias_tests #BT_fila_encabezados .BT_col_enc {
+  text-align: center;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests #BT_tabla_baterias_tests #BT_fila_encabezados #BT_col_enc_codigo {
+  width: 4%;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests #BT_tabla_baterias_tests #BT_fila_encabezados #BT_col_enc_nombre {
+  width: 32%;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests #BT_tabla_baterias_tests #BT_fila_encabezados #BT_col_enc_descripcion {
+  width: 50%;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests #BT_tabla_baterias_tests #BT_fila_encabezados #BT_col_enc_btn_izdo {
+  width: 7%;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests #BT_tabla_baterias_tests #BT_fila_encabezados #BT_col_enc_btn_dcho {
+  width: 7%;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests #BT_tabla_baterias_tests .BT_fila_registro_bateria_test {
+  border-bottom: 1px solid;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests #BT_tabla_baterias_tests .BT_fila_registro_bateria_test .BT_col {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1em;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests #BT_tabla_baterias_tests .BT_fila_registro_bateria_test .BT_col_codigo {
+  text-align: center;
+  font-weight: bold;
+  width: 4%;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests #BT_tabla_baterias_tests .BT_fila_registro_bateria_test .BT_col_nombre {
+  width: 32%;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests #BT_tabla_baterias_tests .BT_fila_registro_bateria_test .BT_col_descripcion {
+  width: 50%;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests #BT_tabla_baterias_tests .BT_fila_registro_bateria_test .BT_col_btn_izdo {
+  text-align: center;
+  width: 7%;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests #BT_tabla_baterias_tests .BT_fila_registro_bateria_test .BT_col_btn_izdo .btn_asignar {
+  width: 100%;
+  padding: 0.2em;
+  color: white;
+  background-color: #007bff;
+  border: 1px solid #4d4d4d;
+  border-radius: 6px;
+}
+
+#baterias #contenedor_baterias #BT_contenedor_tabla_baterias_tests #BT_tabla_baterias_tests .BT_fila_registro_bateria_test .BT_col_btn_dcho {
+  text-align: center;
+  width: 7%;
+}
+
+#baterias #contenedor_baterias #TT_contenedor_tabla_tests {
+  margin: 0%;
+  padding: 0% 0.5em;
+}
+
+#baterias #contenedor_baterias #TT_contenedor_tabla_tests #TT_tabla_tests {
+  width: 90%;
+  margin: auto;
+  background-color: #fff6da;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 5px;
+          box-shadow: 5px 5px 15px 5px;
+  overflow: hidden;
+}
+
+#baterias #contenedor_baterias #TT_contenedor_tabla_tests #TT_tabla_tests #TT_fila_encabezados {
+  font-family: "Kanit", sans-serif;
+  font-weight: bold;
+  font-size: 0.8em;
+  border-bottom: 1px solid indigo;
+}
+
+#baterias #contenedor_baterias #TT_contenedor_tabla_tests #TT_tabla_tests #TT_fila_encabezados .TT_col_enc {
+  text-align: center;
+}
+
+#baterias #contenedor_baterias #TT_contenedor_tabla_tests #TT_tabla_tests #TT_fila_encabezados #TT_col_enc_codigo {
+  width: 4%;
+}
+
+#baterias #contenedor_baterias #TT_contenedor_tabla_tests #TT_tabla_tests #TT_fila_encabezados #TT_col_enc_nombre {
+  width: 32%;
+}
+
+#baterias #contenedor_baterias #TT_contenedor_tabla_tests #TT_tabla_tests #TT_fila_encabezados #TT_col_enc_descripcion {
+  width: 57%;
+}
+
+#baterias #contenedor_baterias #TT_contenedor_tabla_tests #TT_tabla_tests #TT_fila_encabezados #TT_col_enc_btn_adjuntar {
+  width: 7%;
+}
+
+#baterias #contenedor_baterias #TT_contenedor_tabla_tests #TT_tabla_tests .TT_fila_registro_test {
+  border-bottom: 1px solid;
+}
+
+#baterias #contenedor_baterias #TT_contenedor_tabla_tests #TT_tabla_tests .TT_fila_registro_test .TT_col {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1em;
+}
+
+#baterias #contenedor_baterias #TT_contenedor_tabla_tests #TT_tabla_tests .TT_fila_registro_test .TT_col_codigo {
+  text-align: center;
+  font-weight: bold;
+  width: 4%;
+}
+
+#baterias #contenedor_baterias #TT_contenedor_tabla_tests #TT_tabla_tests .TT_fila_registro_test .TT_col_nombre {
+  width: 32%;
+}
+
+#baterias #contenedor_baterias #TT_contenedor_tabla_tests #TT_tabla_tests .TT_fila_registro_test .TT_col_descripcion {
+  width: 57%;
+}
+
+#baterias #contenedor_baterias #TT_contenedor_tabla_tests #TT_tabla_tests .TT_fila_registro_test .TT_col_btn_adjuntar {
+  text-align: center;
+  width: 7%;
+}
+
+#baterias #contenedor_baterias #TT_contenedor_tabla_tests #TT_tabla_tests .TT_fila_registro_test .TT_col_btn_adjuntar .btn_adjuntar_test {
+  width: 100%;
+  padding: 0.2em;
+  color: white;
+  background-color: #007bff;
+  border: 1px solid #4d4d4d;
+  border-radius: 6px;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla {
+  margin: 0%;
+  padding: 0% 0.5em;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_contenedor_editables {
+  width: 90%;
+  margin: auto;
+  padding: 0.5em 0px;
+  font-family: "Kanit", sans-serif;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_contenedor_editables #CF_contenedor_denominacion {
+  padding: 0.5em;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_contenedor_editables #CF_contenedor_denominacion label {
+  color: black;
+  margin-right: 0.5em;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_contenedor_editables #CF_contenedor_denominacion input {
+  width: 82%;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_contenedor_editables #CF_contenedor_descripcion {
+  padding: 0.5em;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_contenedor_editables #CF_contenedor_descripcion label {
+  color: black;
+  margin-right: 0.5em;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_contenedor_editables #CF_contenedor_descripcion input {
+  width: 85%;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla {
+  width: 90%;
+  margin: auto;
+  background-color: #fff6da;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 5px;
+          box-shadow: 5px 5px 15px 5px;
+  overflow: hidden;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla #CF_fila_encabezados {
+  font-family: "Kanit", sans-serif;
+  font-weight: bold;
+  font-size: 0.8em;
+  border-bottom: 1px solid indigo;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla #CF_fila_encabezados .CF_col_enc {
+  text-align: center;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla #CF_fila_encabezados #CF_col_enc_codigo {
+  width: 4%;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla #CF_fila_encabezados #CF_col_enc_nombre {
+  width: 29%;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla #CF_fila_encabezados #CF_col_enc_descripcion {
+  width: 46%;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla #CF_fila_encabezados #CF_col_enc_btn_retirar {
+  width: 7%;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla #CF_fila_encabezados #CF_col_enc_btn_subir {
+  width: 7%;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla #CF_fila_encabezados #CF_col_enc_btn_bajar {
+  width: 7%;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla .CF_fila_registro_test {
+  border-bottom: 1px solid;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla .CF_fila_registro_test .CF_col {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1em;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla .CF_fila_registro_test .CF_col_codigo {
+  text-align: center;
+  font-weight: bold;
+  width: 4%;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla .CF_fila_registro_test .CF_col_nombre {
+  width: 32%;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla .CF_fila_registro_test .CF_col_descripcion {
+  width: 57%;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla .CF_fila_registro_test .CF_col_btn_retirar {
+  text-align: center;
+  width: 7%;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla .CF_fila_registro_test .CF_col_btn_retirar .btn_retirar_test {
+  width: 100%;
+  padding: 0.2em;
+  color: white;
+  background-color: #007bff;
+  border: 1px solid #4d4d4d;
+  border-radius: 6px;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla .CF_fila_registro_test .CF_col_btn_subir {
+  text-align: center;
+  width: 7%;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla .CF_fila_registro_test .CF_col_btn_subir .btn_subir_test {
+  width: 100%;
+  padding: 0.2em;
+  color: white;
+  background-color: #007bff;
+  border: 1px solid #4d4d4d;
+  border-radius: 6px;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla .CF_fila_registro_test .CF_col_btn_bajar {
+  text-align: center;
+  width: 7%;
+}
+
+#baterias #contenedor_baterias #CF_contenedor_tabla #CF_tabla .CF_fila_registro_test .CF_col_btn_bajar .btn_bajar_test {
+  width: 100%;
+  padding: 0.2em;
+  color: white;
+  background-color: #007bff;
+  border: 1px solid #4d4d4d;
+  border-radius: 6px;
+}
+
+/* GESTIÓN DE PLANES */
+#planes {
+  background-color: lavender;
+  padding: 0px 0px 1em 0px;
+}
+
+#planes #planes_contenedor_titulos h3 {
+  color: black;
+  text-align: center;
+  padding: 0.5em 0%;
+  margin-bottom: 0%;
+  font-family: "Kanit", sans-serif;
+  font-size: 1.5em;
+}
+
+#planes #planes_contenedor_herramientas {
+  width: 95%;
+  margin: auto;
+  padding: 0.5em;
+  font-family: "Kanit", sans-serif;
+}
+
+#planes #planes_contenedor_herramientas button {
+  margin: 0px 0.5em;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos {
+  margin: 0%;
+  padding: 0% 0.5em;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos #PF_tabla_alumnos {
+  width: 90%;
+  margin: auto;
+  background-color: #fff6da;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 5px;
+          box-shadow: 5px 5px 15px 5px;
+  overflow: hidden;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos #PF_tabla_alumnos #PF_fila_encabezados {
+  font-family: "Kanit", sans-serif;
+  font-weight: bold;
+  font-size: 0.8em;
+  border-bottom: 1px solid indigo;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos #PF_tabla_alumnos #PF_fila_encabezados .PF_col_enc {
+  text-align: center;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos #PF_tabla_alumnos #PF_fila_encabezados #PF_col_enc_codigo {
+  width: 4%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos #PF_tabla_alumnos #PF_fila_encabezados #PF_col_enc_nombre {
+  width: 32%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos #PF_tabla_alumnos #PF_fila_encabezados #PF_col_enc_apellidos {
+  width: 50%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos #PF_tabla_alumnos #PF_fila_encabezados #PF_col_enc_foto {
+  width: 7%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos #PF_tabla_alumnos #PF_fila_encabezados #PF_col_enc_btn_editar {
+  width: 7%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos #PF_tabla_alumnos .PF_fila_registro_alumno {
+  border-bottom: 1px solid;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos #PF_tabla_alumnos .PF_fila_registro_alumno .PF_col {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1em;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos #PF_tabla_alumnos .PF_fila_registro_alumno .PF_col_codigo {
+  text-align: center;
+  font-weight: bold;
+  width: 4%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos #PF_tabla_alumnos .PF_fila_registro_alumno .PF_col_nombre {
+  width: 32%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos #PF_tabla_alumnos .PF_fila_registro_alumno .PF_col_apellidos {
+  width: 40%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos #PF_tabla_alumnos .PF_fila_registro_alumno .PF_col_foto {
+  text-align: center;
+  width: 17%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos #PF_tabla_alumnos .PF_fila_registro_alumno .PF_col_foto .foto_usuario_inline {
+  width: 100%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_alumnos #PF_tabla_alumnos .PF_fila_registro_alumno .PF_col_btn_editar {
+  text-align: center;
+  width: 7%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_baterias_tests {
+  margin: 0%;
+  padding: 0% 0.5em;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_baterias_tests #PF_tabla_baterias_tests {
+  width: 90%;
+  margin: auto;
+  background-color: #fff6da;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 5px;
+          box-shadow: 5px 5px 15px 5px;
+  overflow: hidden;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_baterias_tests #PF_tabla_baterias_tests #PF_fila_encabezados {
+  font-family: "Kanit", sans-serif;
+  font-weight: bold;
+  font-size: 0.8em;
+  border-bottom: 1px solid indigo;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_baterias_tests #PF_tabla_baterias_tests #PF_fila_encabezados .PF_col_enc {
+  text-align: center;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_baterias_tests #PF_tabla_baterias_tests #PF_fila_encabezados #PF_col_enc_codigo {
+  width: 4%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_baterias_tests #PF_tabla_baterias_tests #PF_fila_encabezados #PF_col_enc_nombre {
+  width: 32%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_baterias_tests #PF_tabla_baterias_tests #PF_fila_encabezados #PF_col_enc_descripcion {
+  width: 57%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_baterias_tests #PF_tabla_baterias_tests #PF_fila_encabezados #PF_col_enc_btn_izdo {
+  width: 7%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_baterias_tests #PF_tabla_baterias_tests .PF_fila_registro_bateria_test {
+  border-bottom: 1px solid;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_baterias_tests #PF_tabla_baterias_tests .PF_fila_registro_bateria_test .PF_col {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1em;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_baterias_tests #PF_tabla_baterias_tests .PF_fila_registro_bateria_test .PF_col_codigo {
+  text-align: center;
+  font-weight: bold;
+  width: 4%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_baterias_tests #PF_tabla_baterias_tests .PF_fila_registro_bateria_test .PF_col_nombre {
+  width: 32%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_baterias_tests #PF_tabla_baterias_tests .PF_fila_registro_bateria_test .PF_col_descripcion {
+  width: 57%;
+}
+
+#planes #contenedor_planes #PF_contenedor_tabla_baterias_tests #PF_tabla_baterias_tests .PF_fila_registro_bateria_test .PF_col_btn_izdo {
+  text-align: center;
+  width: 7%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla {
+  margin: 0%;
+  padding: 0% 0.5em;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla {
+  width: 98%;
+  margin: auto;
+  background-color: #fff6da;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 5px;
+          box-shadow: 5px 5px 15px 5px;
+  overflow: hidden;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla #TA_fila_encabezados {
+  font-family: "Kanit", sans-serif;
+  font-weight: bold;
+  font-size: 0.8em;
+  border-bottom: 1px solid indigo;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla #TA_fila_encabezados .TA_col_enc {
+  text-align: center;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla #TA_fila_encabezados #TA_col_enc_codigo {
+  width: 4%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla #TA_fila_encabezados #TA_col_enc_nombre {
+  width: 20%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla #TA_fila_encabezados #TA_col_enc_descripcion {
+  width: 36%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla #TA_fila_encabezados #TA_col_enc_fechaAsignacion {
+  width: 10%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla #TA_fila_encabezados #TA_col_enc_fechaInicio {
+  width: 10%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla #TA_fila_encabezados #TA_col_enc_fechaFin {
+  width: 10%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla #TA_fila_encabezados #TA_col_enc_nota {
+  width: 4%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla #TA_fila_encabezados #TA_col_enc_ejecucion {
+  display: none;
+  width: 0%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla #TA_fila_encabezados #PF_col_enc_btn_retirar {
+  width: 6%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla .TA_fila_registro_bateria {
+  border-bottom: 1px solid;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla .TA_fila_registro_bateria .TA_col {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1em;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla .TA_fila_registro_bateria .TA_col_codigo {
+  text-align: center;
+  font-weight: bold;
+  width: 4%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla .TA_fila_registro_bateria .TA_col_nombre {
+  width: 20%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla .TA_fila_registro_bateria .TA_col_descripcion {
+  width: 36%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla .TA_fila_registro_bateria .TA_col_fechaAsignacion {
+  width: 10%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla .TA_fila_registro_bateria .TA_col_fechaInicio {
+  width: 10%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla .TA_fila_registro_bateria .TA_col_fechaFin {
+  width: 10%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla .TA_fila_registro_bateria .TA_col_nota {
+  width: 4%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla .TA_fila_registro_bateria .TA_col_ejecucion {
+  display: none;
+  width: 0%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla .TA_fila_registro_bateria .TA_col_btn_retirar {
+  text-align: center;
+  width: 6%;
+}
+
+#planes #contenedor_planes #TA_contenedor_tabla #TA_tabla .TA_fila_registro_bateria .TA_col_btn_retirar .boton_retirar_asignacion {
+  width: 100%;
+  padding: 0.2em;
+  color: white;
+  background-color: #007bff;
+  border: 1px solid #4d4d4d;
+  border-radius: 6px;
+}
+
+#TS_contenedor_test {
+  width: 50%;
+  border: 4px double;
+  border-radius: 4px;
+  -webkit-box-shadow: 5px 5px 15px 5px black;
+          box-shadow: 5px 5px 15px 5px black;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+#TS_contenedor_test #TS_contenedor_nombre {
+  background-color: lavender;
+  color: black;
+  text-align: center;
+  padding-top: 0.5em;
+}
+
+#TS_contenedor_test #TS_contenedor_descripcion {
+  width: 95%;
+  margin: auto;
+  font-size: 0.8em;
+}
+
+#TS_contenedor_test #TS_contenedor_encabezado {
+  width: 95%;
+  margin: auto;
+  font-size: 0.8em;
+  /*
+        & #TS_contenedor_texto_propio{
+        }
+        */
+}
+
+#TS_contenedor_test #TS_contenedor_encabezado .TS_medio_adjunto {
+  margin: 0.5em 0.5em 0% 0.5em;
+  text-align: center;
+  /*
+            & .TS_visor_imagen_card{
+
+            }
+            & .TS_visor_video_card{
+
+            }
+            & .TS_audio_player{
+
+            }*/
+}
+
+#TS_contenedor_test #TS_contenedor_encabezado .TS_medio_adjunto .TS_medio_texto {
+  text-align: justify;
+}
+
+#TS_contenedor_test #TS_contenedor_opciones {
+  border-top: 1px solid;
+}
+
+#TS_contenedor_test #TS_contenedor_opciones .TS_contenedor_opcion {
+  margin: 1em 1em 0.5em 1em;
+}
+
+#TS_contenedor_test #TS_contenedor_opciones .TS_contenedor_opcion .TS_radio_opcion {
+  margin: 0px 0.5em;
+}
+
+#TS_contenedor_test #TS_contenedor_opciones .TS_contenedor_opcion .TS_imagen_opcion {
+  width: 100px;
+}
+
+#TS_contenedor_test #TS_contenedor_opciones .TS_contenedor_opcion .TS_texto_opcion {
+  margin: 0px 1em 0px 1em;
+}
+/*# sourceMappingURL=estilos.css.map */

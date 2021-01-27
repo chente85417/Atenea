@@ -1,0 +1,188 @@
+@import 'globales';
+/*
+#AteneaIcono{
+    width: 20%;
+}*/
+#AteneaLogo{
+    width: 100%;
+}
+h4{
+    font: {
+        family: $fuente_estrecha;
+        size: 0.8em;
+    }
+}
+
+input{
+    width: 100%;
+    font: {
+        family: $fuente_general;
+        size: 1.2em;
+    }
+}
+
+.bloque,
+.bloque_boton{
+    margin: 0.5em 0%;
+}
+
+.bloque_boton{
+    text-align: center;
+}
+
+.primero{
+    padding-top: 0.5em;
+}
+
+.boton_login{
+    border: 2px ridge #DB1D1D;
+    border-radius: 3px;
+    background-color: rgb(214, 83, 83);
+    color: $color_texto_claro;
+}
+
+p{
+    font: {
+        family: $fuente_estrecha;
+        size: 0.8em;
+    }
+}
+
+@media (max-width: $smartphone){
+    body{
+        background-color: #EDEDED;
+    }
+    section{
+        background-color: #EDEDED;
+    
+        & #login_formulario{
+            width: 85%;
+            margin: auto;
+            padding: 0.5em 0%;
+            font: {
+                family: $fuente_general;
+            }
+            & #login_boton_entrar{
+                padding: 0.2em;
+                width: 70%;
+            }
+            & #login_boton_reset_pass{
+                padding: 0.2em;
+                width: 70%;
+            }
+        }
+        & #reset_clave{
+            width: 85%;
+            margin: auto;
+            padding: 0.5em 0%;
+            font: {
+                family: $fuente_general;
+            }
+            & #btn_reset_clave{
+                padding: 0.2em;
+                width: 70%;
+            }
+            & #btn_volver{
+                padding: 0.2em;
+                width: 70%;
+            }
+            & #btn_email{
+                padding: 0.2em;
+                width: 70%;
+            }
+        }
+    }
+}
+
+@media (min-width: $min-tablet) and (max-width: $tablet){
+    section{
+        width: 90%;
+        max-width: 400px;
+        margin: 20% auto;
+        background-color: #EDEDED;
+        box-shadow: 5px 5px 15px 5px #000000;
+    
+        & #login_formulario{
+            width: 85%;
+            margin: auto;
+            padding: 0.5em 0%;
+            font: {
+                family: $fuente_general;
+            }
+            & #login_boton_entrar{
+                padding: 0.2em;
+                width: 70%;
+            }
+            & #login_boton_reset_pass{
+                padding: 0.2em;
+                width: 70%;
+            }
+        }
+        & #reset_clave{
+            width: 85%;
+            margin: auto;
+            padding: 0.5em 0%;
+            font: {
+                family: $fuente_general;
+            }
+            & #btn_reset_clave{
+                padding: 0.2em;
+                width: 70%;
+            }
+            & #btn_volver{
+                padding: 0.2em;
+                width: 70%;
+            }
+            & #btn_email{
+                padding: 0.2em;
+                width: 70%;
+            }
+        }
+    }
+}
+
+@media (min-width: $min-computer){
+    section{
+        width: 400px;
+        margin: 20% auto;
+        background-color: #EDEDED;
+        box-shadow: 5px 5px 15px 5px #000000;
+
+        & #login_formulario{
+            width: 85%;
+            margin: auto;
+            padding: 0.5em 0%;
+            font: {
+                family: $fuente_general;
+            }
+            & #login_boton_entrar{
+                padding: 0.2em;
+                width: 70%;
+            }
+            & #login_boton_reset_pass{
+                padding: 0.2em;
+                width: 70%;
+            }
+        }
+        & #reset_clave{
+            width: 85%;
+            margin: auto;
+            padding: 0.5em 0%;
+            font: {
+                family: $fuente_general;
+            }
+            & #btn_reset_clave{
+                padding: 0.2em;
+                width: 70%;
+            }
+            & #btn_volver{
+                padding: 0.2em;
+                width: 70%;
+            }
+            & #btn_email{
+                padding: 0.2em;
+                width: 70%;
+            }
+        }
+    }
+}

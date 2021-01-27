@@ -1,0 +1,44 @@
+#FUSR_seccion {
+  width: 85%;
+  margin: 2em auto 0px auto;
+  background-color: #fff6da;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 5px;
+          box-shadow: 5px 5px 15px 5px;
+  overflow: hidden;
+}
+
+#FUSR_seccion #FUSR_datos_usuario {
+  font-family: "Roboto Condensed", sans-serif;
+  padding: 2em;
+}
+
+#FUSR_seccion #FUSR_datos_usuario .etiqueta {
+  color: black;
+}
+
+#FUSR_seccion #FUSR_datos_usuario #FUSR_contenedor_foto #FUSR_imagen_foto_usuario {
+  width: 150px;
+  margin-bottom: 0.5em;
+  border: solid 1px;
+}
+
+#FUSR_seccion #FUSR_datos_usuario #FUSR_contenedor_foto #FUSR_contenedor_selector_foto #boton_seleccionar_foto {
+  width: 150px;
+}
+
+#FUSR_seccion #FUSR_datos_usuario #FUSR_contenedor_foto #FUSR_contenedor_selector_foto #FUSR_label_foto {
+  display: none;
+}
+
+#FUSR_seccion #FUSR_datos_usuario #FUSR_contenedor_foto #FUSR_file_foto_usuario {
+  display: none;
+}
+
+#FUSR_seccion #FUSR_contenedor_botones {
+  width: 20%;
+  margin: auto;
+  padding-bottom: 2em;
+  text-align: center;
+}
+/*# sourceMappingURL=estilos_formulario_usuario.css.map */

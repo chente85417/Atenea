@@ -1,0 +1,69 @@
+@charset "UTF-8";
+/*BARRA DE MENÚ PRINCIPAL*/
+#barra_nav {
+  background-color: #494949;
+}
+
+#barra_nav ul {
+  padding: 0px;
+  margin-bottom: 0px;
+}
+
+#barra_nav li {
+  display: inline-block;
+  padding: 0.5em 1em;
+}
+
+#barra_nav li:hover > a {
+  color: #1fdff8;
+}
+
+#barra_nav a {
+  font-family: "Kanit", sans-serif;
+  text-decoration: none;
+  height: 4em;
+  color: white;
+}
+
+.elemento_menu_principal {
+  background-color: #494949;
+}
+
+.elemento_menu_principal_seleccionado {
+  background-color: #47a0ff;
+}
+
+/*BARRA DE MENÚ DE MEDIOS*/
+#barra_nav_medios {
+  background-color: #494949;
+}
+
+#barra_nav_medios ul {
+  padding: 0px;
+  margin-bottom: 0px;
+}
+
+#barra_nav_medios li {
+  display: inline-block;
+  padding: 0.5em 1em;
+}
+
+#barra_nav_medios li:hover > a {
+  color: #1fdff8;
+}
+
+#barra_nav_medios a {
+  font-family: "Kanit", sans-serif;
+  text-decoration: none;
+  height: 4em;
+  color: white;
+}
+
+.elemento_menu_medios {
+  background-color: #494949;
+}
+
+.elemento_menu_medios_seleccionado {
+  background-color: #47a0ff;
+}
+/*# sourceMappingURL=estilos_barra_nav.css.map */

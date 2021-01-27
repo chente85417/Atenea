@@ -1,0 +1,1440 @@
+/*PÁGINA DE ADMINISTRADORES*/
+@import 'globales';
+
+body{
+    background-color: $color_fondo_principal;
+    min-width: 1200px;
+}
+.fila_normal{
+    font-weight:'100';
+    color: $color_texto_oscuro;
+    background-color: white;
+}
+.fila_resaltada{
+    font-weight:'200';
+    color: $color_texto_oscuro;
+    background-color: $color_fondo_fila_resaltada;
+}
+.ver{
+    display: block;
+}
+.ocultar{
+    display: none;
+}
+.desactivar{
+    filter: grayscale(100%);
+}
+.activar{
+    filter: grayscale(0%);
+}
+.centrar{
+    height: 100%;
+    text-align: center;
+}
+.foto{
+    height: 173px;
+}
+.editable{
+    height: 200px;
+}
+
+/////////////////////////////////////////
+/* ÁREA DE DATOS DEL USUARIO CONECTADO */
+/////////////////////////////////////////
+
+header{
+    background-color: $color_fondo_datos_usuario;
+    & #datos_usuario_conectado{
+        width: 85%;
+        margin: auto;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        color: $color_texto_claro;
+        font: {
+            family: $fuente_estrecha;
+            size: 1.5em;
+        }
+        & #AteneaIcono{
+            width: 80px;
+        }
+        & #saludo{
+            padding-right: 0.5em;
+            padding-top: 0.4em;
+            margin-top: 0.5em;
+        }
+        & #ADM_nombre{
+            font-style: italic;
+            margin-top: 0.5em;
+            padding-top: 0.4em;
+        }
+        & #contenedor_logout{
+            text-align: right;
+            padding-bottom: 0.8em;
+            & a{
+                color: $color_texto_claro;
+                font-size: 0.8em;
+            }
+        }
+    }
+}
+
+/////////////////////////
+/* GESTIÓN DE USUARIOS */
+/////////////////////////
+    
+/*ÁREA DE HERRAMIENTAS*/
+#USR_tabla_seccion_herramientas{
+    background-color: $color_fondo_principal;
+    font: {
+        family: $fuente_general;
+    }
+    padding: 1em;
+    & #filtrar{
+        margin: 0px 1em;
+    }
+    & #btn_editar_insertar_usuario{
+        height: 100%;
+    }
+}
+/*ÁREA DE LA TABLA DE USUARIOS*/
+#USR_contenedor_tabla{
+    background-color: $color_fondo_principal;
+    padding-bottom: 1.5em;
+    & #USR_encabezado_tabla{
+        text-align: center;
+        padding: 0.5em 0%;
+        color: $color_texto_oscuro;
+        font: {
+            family: $fuente_tablas;
+            size: 1.5em;
+        }
+    }
+    & #USR_tabla{
+        @include aspecto_tabla(0% 1%, $color_fondo_tablas);
+        & #USR_fila_encabezados{
+            font: {
+                family: $fuente_tablas;
+                weight: bold;
+                size: 0.8em;
+            }
+            border-bottom: 1px solid indigo;
+            & .USR_col_enc{
+                text-align: center;
+            }
+            & #USR_col_enc_codigo{/*3,7,12,11,7,12,9,15,4,5,7,4,4*/
+                width: 3%;
+            }
+            & #USR_col_enc_foto{
+                width: 7%;
+            }
+            & #USR_col_enc_nombre{
+                width: 12%;
+            }
+            & #USR_col_enc_apellidos{
+                width: 11%;
+            }
+            & #USR_col_enc_usuario{
+                width: 7%;
+            }
+            & #USR_col_enc_email{
+                width: 12%;
+            }
+            & #USR_col_enc_fechaAlta{
+                width: 9%;
+            }
+            & #USR_col_enc_direccion{
+                width: 15%;
+            }
+            & #USR_col_enc_cp{
+                width: 4%;
+            }
+            & #USR_col_enc_telefono{
+                width: 5%;
+            }
+            & #USR_col_enc_fechaNac{
+                width: 7%;
+            }
+            & #USR_col_enc_btn_editar{
+                width: 4%;
+            }
+            & #USR_col_enc_btn_eliminar{
+                width: 4%;
+            }
+        }
+        & .USR_fila_registro_usuario{
+            & .USR_col{
+                border-bottom: 1px solid black;
+                font: {
+                    family: $fuente_estrecha;
+                    size: 1em;
+                }
+            }
+            & .USR_col_codigo{
+                text-align: center;
+                font-weight: bold;
+                width: 3%;
+            }
+            & .USR_col_foto{
+                width: 7%;
+                text-align: center;
+                & .foto_usuario_inline{
+                    height: 100px;
+                }
+            }
+            & .USR_col_nombre{
+                width: 12%;
+            }
+            & .USR_col_apellidos{
+                width: 11%;
+            }
+            & .USR_col_usuario{
+                width: 7%;
+            }
+            & .USR_col_email{
+                width: 12%;
+            }
+            & .USR_col_fechaAlta{
+                text-align: center;
+                width: 9%;
+            }
+            & .USR_col_direccion{
+                width: 15%;
+            }
+            & .USR_col_cp{
+                text-align: center;
+                width: 4%;
+            }
+            & .USR_col_telefono{
+                text-align: center;
+                width: 5%;
+            }
+            & .USR_col_fechaNac{
+                text-align: center;
+                width: 7%;
+            }
+            & .USR_col_btn_editar{
+                text-align: center;
+                width: 4%;
+            }
+            & .USR_col_btn_eliminar{
+                text-align: center;
+                width: 4%;
+            }
+        }
+    }
+}
+///////////////////////////////////
+/*       GESTIÓN DE MEDIOS       */
+/*                               */
+/*      (SECCIÓN DE TEXTOS)      */
+///////////////////////////////////
+#textos{
+    background-color: $color_fondo_principal;
+    padding: 0px 0px 1em 0px;
+    & #textos_contenedor_titulos{
+        & h3{
+            color: $color_texto_oscuro;
+            text-align: center;
+            padding: 0.5em 0%;
+            margin-bottom: 0%;
+            font: {
+                family: $fuente_general;
+                size: 1.5em;
+            }
+        }
+    }
+    & .textos_contenedor_herramientas{
+        margin: 0%;
+        padding: 0.5em;
+        font: {
+            family: $fuente_general;
+        }
+        & button{
+            margin-left: 1em;
+        }
+    }
+    & #textos_contenedor_datos{
+        margin: 0%;
+        & #tabla_textos_contenedor{
+            padding: 0% 0.5em;
+            & #tabla_textos{
+                @include aspecto_tabla(auto, $color_fondo_tablas);
+                & #tabla_textos_encabezado{
+                    font: {
+                        family: $fuente_tablas;
+                        weight: bold;
+                        size: 0.8em;
+                    }
+                    border-bottom: 1px solid indigo;
+                    & .tabla_textos_col_enc{
+                        text-align: center;
+                    }
+                    & #tabla_textos_col_enc_codigo{
+                        width: 4%;
+                    }
+                    & #tabla_textos_col_enc_nombre{
+                        width: 32%;
+                    }
+                    & #tabla_textos_col_enc_descripcion{
+                        width: 50%;
+                    }
+                    & #tabla_textos_col_enc_btn_editar{
+                        width: 7%;
+                    }
+                    & #tabla_textos_col_enc_btn_eliminar{
+                        width: 7%;
+                    }
+                }
+                & .fila_registro_texto{
+                    & .tabla_textos_col{
+                        border-bottom: 1px solid black;
+                        font: {
+                            family: $fuente_estrecha;
+                            size: 1em;
+                        }
+                    }
+                    & .tabla_textos_col_codigo{
+                        text-align: center;
+                        font-weight: bold;
+                        width: 4%;
+                    }
+                    & .tabla_textos_col_nombre{
+                        width: 32%;
+                    }
+                    & .tabla_textos_col_descripcion{
+                        width: 50%;
+                    }
+                    & .tabla_textos_col_btn_editar{
+                        text-align: center;
+                        width: 7%;
+                    }
+                    & .tabla_textos_col_btn_eliminar{
+                        text-align: center;
+                        width: 7%;
+                    }
+                }
+            }
+        }
+        & #textos_data_contenedor{
+            padding: 0% 0.5em;
+            font: {
+                family: $fuente_general;
+            }
+            & .contenedor_interno{
+                margin: 0%;
+                padding: 0% 0.5em;
+            }
+            & .contenedor_interno label{
+                margin: 0%;
+                color: $color_texto_oscuro;
+            }
+            &   .contenedor_interno input,
+                .contenedor_interno textarea{
+                margin: 0%;
+            }
+        }
+    }
+}
+///////////////////////////////////
+/*      GESTIÓN DE MEDIOS        */
+/*                               */
+/*    (SECCIÓN DE IMÁGENES)      */
+///////////////////////////////////
+#imagenes{
+    background-color: $color_fondo_principal;
+    padding: 0px 0px 1em 0px;
+    & #imagenes_contenedor_titulos{
+        & h3{
+            color: $color_texto_oscuro;
+            text-align: center;
+            padding: 0.5em 0%;
+            margin-bottom: 0%;
+            font: {
+                family: $fuente_general;
+                size: 1.5em;
+            }
+        }
+    }
+    & .imagenes_contenedor_herramientas{
+        margin: auto;
+        padding: 0.5em 1em;
+        font: {
+            family: $fuente_general;
+        }
+        & #contenedor_botones{
+            padding: 0%;
+        }
+        & div:last-child{
+            padding: 0%;
+            text-align: right;
+        }
+    }
+    & #contenedor_cartas_imagenes{
+        margin: 0%;
+        padding: 0% 0.5em;
+        display: flex;
+        & .card{
+            margin: 0.5em;
+            & .card-body{
+                & .card-title{
+                    font: {
+                        family: $fuente_general;
+                    }
+                }
+                & .card-text{
+                    font: {
+                        family: $fuente_estrecha;
+                    }
+                }
+                & #imagen_denominacion{
+                    margin: 0px 0px 0.2em 0px;
+                    font: {
+                        family: $fuente_general;
+                    }
+                }
+                & #imagen_descripcion{
+                    margin: 0.2em 0px 0.2em 0px;
+                    font: {
+                        family: $fuente_estrecha;
+                    }
+                }
+                & .carta_contenedor_botones{
+                    margin: 0%;
+                    font: {
+                        family: $fuente_general;
+                    }
+                }
+            }
+        }
+    }
+}
+///////////////////////////////////
+/*       GESTIÓN DE MEDIOS       */
+/*                               */
+/*      (SECCIÓN DE VÍDEOS)      */
+///////////////////////////////////
+#videos{
+    background-color: $color_fondo_principal;
+    padding: 0px 0px 1em 0px;
+    & #videos_contenedor_titulos{
+        & h3{
+            color: $color_texto_oscuro;
+            text-align: center;
+            padding: 0.5em 0%;
+            margin-bottom: 0%;
+            font: {
+                family: $fuente_general;
+                size: 1.5em;
+            }
+        }
+    }
+    & .videos_contenedor_herramientas{
+        margin: auto;
+        padding: 0.5em 1em;
+        font: {
+            family: $fuente_general;
+        }
+        & #contenedor_botones{
+            padding: 0%;
+        }
+        & div:last-child{
+            padding: 0%;
+            text-align: right;
+        }
+    }
+    & #contenedor_cartas_videos{
+        margin: 0%;
+        padding: 0% 0.5em;
+        display: flex;
+        & .card{
+            margin: 0.5em;
+            & .card-body{
+                & .card-title{
+                    font: {
+                        family: $fuente_general;
+                    }
+                }
+                & .card-text{
+                    font: {
+                        family: $fuente_estrecha;
+                    }
+                }
+                & #video_denominacion{
+                    margin: 0px 0px 0.2em 0px;
+                    font: {
+                        family: $fuente_general;
+                    }
+                }
+                & #video_descripcion{
+                    margin: 0.2em 0px 0.2em 0px;
+                    font: {
+                        family: $fuente_estrecha;
+                    }
+                }
+                & .carta_contenedor_botones{
+                    margin: 0%;
+                    font: {
+                        family: $fuente_general;
+                    }
+                }
+            }
+        }
+    }
+}
+///////////////////////////////////
+/*       GESTIÓN DE MEDIOS       */
+/*                               */
+/*      (SECCIÓN DE AUDIOS)      */
+///////////////////////////////////
+#audios{
+    background-color: $color_fondo_principal;
+    padding: 0px 0px 1em 0px;
+    & #audios_contenedor_titulos{
+        & h3{
+            color: $color_texto_oscuro;
+            text-align: center;
+            padding: 0.5em 0%;
+            margin-bottom: 0%;
+            font: {
+                family: $fuente_general;
+                size: 1.5em;
+            }
+        }
+    }
+    & .audios_contenedor_herramientas{
+        width: 85%;
+        margin: auto;
+        padding: 0.5em;
+        font: {
+            family: $fuente_general;
+        }
+        & #contenedor_botones{
+            padding: 0%;
+        }
+        & div:last-child{
+            padding: 0%;
+            text-align: right;
+        }
+    }
+    & #tabla_audios_contenedor{
+        margin: 0%;
+        padding: 0% 0.5em;
+        & #tabla_audios{
+            width: 85%;
+            @include aspecto_tabla(auto, $color_fondo_tablas);
+            & #tabla_audios_encabezado{
+                font: {
+                    family: $fuente_tablas;
+                    weight: bold;
+                    size: 0.8em;
+                }
+                border-bottom: 1px solid indigo;
+                & .tabla_audios_col_enc{
+                    text-align: center;
+                }
+                & #tabla_audios_col_enc_codigo{
+                    width: 4%;
+                }
+                & #tabla_audios_col_enc_nombre{
+                    width: 18%;
+                }
+                & #tabla_audios_col_enc_descripcion{
+                    width: 38%;
+                }
+                & #tabla_audios_col_enc_player{
+                    width: 26%;
+                }
+                & #tabla_audios_col_enc_btn_izdo{
+                    width: 7%;
+                }
+                & #tabla_audios_col_enc_btn_dcho{
+                    width: 7%;
+                }
+            }
+            & .fila_registro_audio{
+                & .tabla_audios_col{
+                    border-bottom: 1px solid black;
+                    font: {
+                        family: $fuente_estrecha;
+                        size: 1em;
+                    }
+                }
+                & .tabla_audios_col_codigo{
+                    text-align: center;
+                    font-weight: bold;
+                    width: 4%;
+                }
+                & .tabla_audios_col_nombre{
+                    width: 18%;
+                    & .audio_denominacion{
+                        margin: 0px;
+                        padding: 0px;
+                    }
+                }
+                & .tabla_audios_col_descripcion{
+                    width: 38%;
+                    & .audio_descripcion{
+                        margin: 0px;
+                        padding: 0px;
+                    }
+                }
+                & .tabla_audios_col_player{
+                    width: 26%;
+                    & #audio_player{
+                        width: 100%;
+                    }
+                }
+                & .tabla_audios_col_btn_izdo{
+                    text-align: center;
+                    width: 7%;
+                }
+                & .tabla_audios_col_btn_dcho{
+                    text-align: center;
+                    width: 7%;
+                }
+            }
+        }
+    }
+}
+//////////////////////
+/* GESTIÓN DE TESTS */
+//////////////////////
+#tests{
+    background-color: $color_fondo_principal;
+    padding: 0px 0px 1em 0px;
+    & #tests_contenedor_titulos{
+        & h3{
+            color: $color_texto_oscuro;
+            text-align: center;
+            padding: 0.5em 0%;
+            margin-bottom: 0%;
+            font: {
+                family: $fuente_general;
+                size: 1.5em;
+            }
+        }
+    }
+    & #contenedor_tests{
+        margin: 0%;
+        & #contenedor_tabla_tests{
+            & .tests_contenedor_herramientas{
+                width: 98%;
+                margin: auto;
+                padding: 0.5em 0%;
+                font: {
+                    family: $fuente_general;
+                }
+                & #btn_nuevo_test{
+                    margin-right: 0.5em;
+                }
+            }
+            & #tabla_tests{
+                width: 98%;
+                @include aspecto_tabla(auto, $color_fondo_tablas);
+                & #tabla_tests_encabezado{
+                    font: {
+                        family: $fuente_tablas;
+                        weight: bold;
+                        size: 0.8em;
+                    }
+                    border-bottom: 1px solid black;
+                    & .tabla_tests_col_enc{
+                        text-align: center;
+                        background-color: $color_fondo_claro;
+                    }
+                    & #tabla_tests_col_enc_codigo{
+                        width: 4%;
+                    }
+                    & #tabla_tests_col_enc_nombre{
+                        width: 80%;
+                    }
+                    & #tabla_tests_col_enc_btn_editar{
+                        width: 9%;
+                    }
+                    & #tabla_tests_col_enc_btn_eliminar{
+                        width: 7%;
+                    }
+                }
+                & .fila_registro_test{
+                    border-bottom: 1px solid;
+                    & .tabla_tests_col{
+                        font: {
+                            family: $fuente_estrecha;
+                            size: 1em;
+                        }
+                        background-color: $color_fondo_claro;
+                    }
+                    & .tabla_tests_col_codigo{
+                        text-align: center;
+                        font-weight: bold;
+                        width: 4%;
+                    }
+                    & .tabla_tests_col_nombre{
+                        width: 80%;
+                    }
+                    & .tabla_tests_col_btn_editar{
+                        text-align: center;
+                        width: 9%;
+                    }
+                    & .tabla_tests_col_btn_eliminar{
+                        text-align: center;
+                        width: 7%;
+                    }
+                }    
+            }
+        }
+        & #contenedor_test{
+            & #contenedor_editables{
+                margin-bottom: 0.5em;
+                font: {
+                    family: $fuente_general;
+                }
+                & label{
+                    color: $color_texto_oscuro;
+                }
+                & input{
+                    width: 100%;
+                }
+            }
+            & #contenedor_encabezado{
+                background-color: $color_fondo_datos_usuario;
+                padding-bottom: 0.5em;
+                font: {
+                    family: $fuente_general;
+                }
+                & #encabezado_header{
+                    background-color: $color_fondo_datos_usuario;
+                    & h3{
+                        color: $color_texto_claro;
+                        font: {
+                            size: 1.5em;
+                        }
+                    }
+                    & button{
+                        height: 2em;
+                        margin: 0.2em;
+                        padding: 0%;
+                    }
+                }
+                & #texto_test{
+                    margin: 0.2em 0%;
+                    width: 100%;
+                    border-radius: 3px;
+                }
+                & .contenedor_elemento_encabezado{
+                    position: relative;
+                    background-color: $color_fondo_claro;
+                    /*padding-top: 1%;
+                    padding-bottom: 1%;*/
+                    border: 1px solid grey;
+                    border-radius: 3px;
+                    & .mini_barra_herramientas{
+                        position: absolute;
+                        z-index: 100;
+                        top: 0px;
+                        right: 0px;
+                        opacity: 20%;
+                        background-color: rgb(199, 182, 170);
+                        border-radius: 0px 0px 0px 5px;
+                        border-left: 1px solid rgb(56, 56, 56);
+                        border-bottom: 1px solid rgb(56, 56, 56);
+                    }
+                    & .mini_barra_herramientas:hover{
+                        opacity: 75%;
+                    }
+                    & .contenedor_medio{
+                        padding: 0.5em;
+                        & .posicionador{
+                            text-align: center;
+                        }
+                    }
+                    & .contenedor_medio:has(img),
+                    & .contenedor_medio:has(video)
+                    {
+                        height: 200px;
+                    }
+                }
+            }
+            & #contenedor_opciones{
+                background-color: $color_fondo_datos_usuario;
+                padding: 0%;
+                font: {
+                    family: $fuente_general;
+                }
+                & .container{
+                    margin: 0%;
+                    padding: 0.25em 0%;
+                    & .contenedor_radio_opcion{
+                        margin: auto 0.5em;
+                    }
+                    & .contenedor_imagen_opcion{
+                        background-color: rgb(133, 243, 255);
+                        position: relative;
+                        overflow: hidden;
+                        resize: both;
+                        min-width: 50px;
+                        min-height: 50px;
+                        padding: 0%;
+                        & .mini_barra_herramientas_opcion{
+                            position: absolute;
+                            z-index: 100;
+                            top: 0px;
+                            right: 0px;
+                            opacity: 20%;
+                            padding-right: 2px;
+                            background-color: rgb(199, 182, 170);
+                            border-radius: 0px 0px 0px 5px;
+                            border-left: 1px solid rgb(56, 56, 56);
+                            border-bottom: 1px solid rgb(56, 56, 56);
+                        }
+                        & .mini_barra_herramientas_opcion:hover{
+                            opacity: 75%;
+                        }
+                        & img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                    & .contenedor_label_opcion{
+                        margin: auto 0%;
+                        & textarea{
+                            width: 100%;
+                            resize: both;
+                        }
+                    }
+                    & .GIO_contenedor{
+                        background-color: $color_fondo_secundario;
+                        & .GIO_botonera{
+                            margin: 0% 0% 0.25em 0%;
+                            padding: 0% 0.5em;
+                            & button{
+                                margin: 0% 0.25em;
+                            }
+                        }
+                        & .GIO_repositorio{
+                            margin: 0%;
+                            padding: 0% 0.5em;
+                            & #GIO_imagen_opcion_carta{
+                                height: 6em;
+                                object-fit: contain;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/////////////////////////
+/* GESTIÓN DE BATERÍAS */
+/////////////////////////
+#baterias{
+    background-color: $color_fondo_principal;
+    padding: 0px 0px 1em 0px;
+    & #baterias_contenedor_titulos{
+        & h3{
+            color: $color_texto_oscuro;
+            text-align: center;
+            padding: 0.5em 0%;
+            margin-bottom: 0%;
+            font: {
+                family: $fuente_general;
+                size: 1.5em;
+            }
+        }
+    }
+    & #baterias_contenedor_herramientas{
+        width: 95%;
+        margin: auto;
+        padding: 0.5em;
+        font: {
+            family: $fuente_general;
+        }
+        & button{
+            margin: 0px 0.5em;
+        }
+    }
+    & #contenedor_baterias{
+        & #BT_contenedor_tabla_baterias_tests{
+            margin: 0%;
+            padding: 0% 0.5em;
+            & #BT_tabla_baterias_tests{
+                width: 90%;
+                @include aspecto_tabla(auto, $color_fondo_tablas);
+                & #BT_fila_encabezados{
+                    font: {
+                        family: $fuente_tablas;
+                        weight: bold;
+                        size: 0.8em;
+                    }
+                    border-bottom: 1px solid indigo;
+                    & .BT_col_enc{
+                        text-align: center;
+                    }
+                    & #BT_col_enc_codigo{
+                        width: 4%;
+                    }
+                    & #BT_col_enc_nombre{
+                        width: 32%;
+                    }
+                    & #BT_col_enc_descripcion{
+                        width: 50%;
+                    }
+                    & #BT_col_enc_btn_izdo{
+                        width: 7%;
+                    }
+                    & #BT_col_enc_btn_dcho{
+                        width: 7%;
+                    }
+                }
+                & .BT_fila_registro_bateria_test{
+                    border-bottom: 1px solid;
+                    & .BT_col{
+                        font: {
+                            family: $fuente_estrecha;
+                            size: 1em;
+                        }
+                    }
+                    & .BT_col_codigo{
+                        text-align: center;
+                        font-weight: bold;
+                        width: 4%;
+                    }
+                    & .BT_col_nombre{
+                        width: 32%;
+                    }
+                    & .BT_col_descripcion{
+                        width: 50%;
+                    }
+                    & .BT_col_btn_izdo{
+                        text-align: center;
+                        width: 7%;
+                        & .btn_asignar{
+                            width: 100%;
+                            padding: 0.2em;
+                            color: $color_texto_claro;
+                            background-color: $color_fondo_datos_usuario;
+                            border: 1px solid rgb(77, 77, 77);
+                            border-radius: 6px;
+                        }
+                    }
+                    & .BT_col_btn_dcho{
+                        text-align: center;
+                        width: 7%;
+                    }
+                }
+            }
+        }
+        & #TT_contenedor_tabla_tests{
+            margin: 0%;
+            padding: 0% 0.5em;
+            & #TT_tabla_tests{
+                width: 90%;
+                @include aspecto_tabla(auto, $color_fondo_tablas);
+                & #TT_fila_encabezados{
+                    font: {
+                        family: $fuente_tablas;
+                        weight: bold;
+                        size: 0.8em;
+                    }
+                    border-bottom: 1px solid indigo;
+                    & .TT_col_enc{
+                        text-align: center;
+                    }
+                    & #TT_col_enc_codigo{
+                        width: 4%;
+                    }
+                    & #TT_col_enc_nombre{
+                        width: 32%;
+                    }
+                    & #TT_col_enc_descripcion{
+                        width: 57%;
+                    }
+                    & #TT_col_enc_btn_adjuntar{
+                        width: 7%;
+                    }
+                }
+                & .TT_fila_registro_test{
+                    border-bottom: 1px solid;
+                    & .TT_col{
+                        font: {
+                            family: $fuente_estrecha;
+                            size: 1em;
+                        }
+                    }
+                    & .TT_col_codigo{
+                        text-align: center;
+                        font-weight: bold;
+                        width: 4%;
+                    }
+                    & .TT_col_nombre{
+                        width: 32%;
+                    }
+                    & .TT_col_descripcion{
+                        width: 57%;
+                    }
+                    & .TT_col_btn_adjuntar{
+                        text-align: center;
+                        width: 7%;
+                        & .btn_adjuntar_test{
+                            width: 100%;
+                            padding: 0.2em;
+                            color: $color_texto_claro;
+                            background-color: $color_fondo_datos_usuario;
+                            border: 1px solid rgb(77, 77, 77);
+                            border-radius: 6px;
+                        }
+                    }
+                }
+            }
+        }
+        & #CF_contenedor_tabla{
+            margin: 0%;
+            padding: 0% 0.5em;
+            & #CF_contenedor_editables{
+                width: 90%;
+                margin: auto;
+                padding: 0.5em 0px;
+                font: {
+                    family: $fuente_general;
+                }
+                & #CF_contenedor_denominacion{
+                    padding: 0.5em;
+                    & label{
+                        color: $color_texto_oscuro;
+                        margin-right: 0.5em;
+                    }
+                    & input{
+                        width: 82%;
+                    }
+                }
+                & #CF_contenedor_descripcion{
+                    padding: 0.5em;
+                    & label{
+                        color: $color_texto_oscuro;
+                        margin-right: 0.5em;
+                    }
+                    & input{
+                        width: 85%;
+                    }
+                }
+            }
+            & #CF_tabla{
+                width: 90%;
+                @include aspecto_tabla(auto, $color_fondo_tablas);
+                & #CF_fila_encabezados{
+                    font: {
+                        family: $fuente_tablas;
+                        weight: bold;
+                        size: 0.8em;
+                    }
+                    border-bottom: 1px solid indigo;
+                    & .CF_col_enc{
+                        text-align: center;
+                    }
+                    & #CF_col_enc_codigo{
+                        width: 4%;
+                    }
+                    & #CF_col_enc_nombre{
+                        width: 29%;
+                    }
+                    & #CF_col_enc_descripcion{
+                        width: 46%;
+                    }
+                    & #CF_col_enc_btn_retirar{
+                        width: 7%;
+                    }
+                    & #CF_col_enc_btn_subir{
+                        width: 7%;
+                    }
+                    & #CF_col_enc_btn_bajar{
+                        width: 7%;
+                    }
+                }
+                & .CF_fila_registro_test{
+                    border-bottom: 1px solid;
+                    & .CF_col{
+                        font: {
+                            family: $fuente_estrecha;
+                            size: 1em;
+                        }
+                    }
+                    & .CF_col_codigo{
+                        text-align: center;
+                        font-weight: bold;
+                        width: 4%;
+                    }
+                    & .CF_col_nombre{
+                        width: 32%;
+                    }
+                    & .CF_col_descripcion{
+                        width: 57%;
+                    }
+                    & .CF_col_btn_retirar{
+                        text-align: center;
+                        width: 7%;
+                        & .btn_retirar_test{
+                            width: 100%;
+                            padding: 0.2em;
+                            color: $color_texto_claro;
+                            background-color: $color_fondo_datos_usuario;
+                            border: 1px solid rgb(77, 77, 77);
+                            border-radius: 6px;
+                        }
+                    }
+                    & .CF_col_btn_subir{
+                        text-align: center;
+                        width: 7%;
+                        & .btn_subir_test{
+                            width: 100%;
+                            padding: 0.2em;
+                            color: $color_texto_claro;
+                            background-color: $color_fondo_datos_usuario;
+                            border: 1px solid rgb(77, 77, 77);
+                            border-radius: 6px;
+                        }
+                    }
+                    & .CF_col_btn_bajar{
+                        text-align: center;
+                        width: 7%;
+                        & .btn_bajar_test{
+                            width: 100%;
+                            padding: 0.2em;
+                            color: $color_texto_claro;
+                            background-color: $color_fondo_datos_usuario;
+                            border: 1px solid rgb(77, 77, 77);
+                            border-radius: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+///////////////////////
+/* GESTIÓN DE PLANES */
+///////////////////////
+#planes{
+    background-color: $color_fondo_principal;
+    padding: 0px 0px 1em 0px;
+    & #planes_contenedor_titulos{
+        & h3{
+            color: $color_texto_oscuro;
+            text-align: center;
+            padding: 0.5em 0%;
+            margin-bottom: 0%;
+            font: {
+                family: $fuente_general;
+                size: 1.5em;
+            }
+        }
+    }
+    & #planes_contenedor_herramientas{
+        width: 95%;
+        margin: auto;
+        padding: 0.5em;
+        font: {
+            family: $fuente_general;
+        }
+        & button{
+            margin: 0px 0.5em;
+        }
+    }
+    & #contenedor_planes{
+        & #PF_contenedor_tabla_alumnos{
+            margin: 0%;
+            padding: 0% 0.5em;
+            & #PF_tabla_alumnos{
+                width: 90%;
+                @include aspecto_tabla(auto, $color_fondo_tablas);
+                & #PF_fila_encabezados{
+                    font: {
+                        family: $fuente_tablas;
+                        weight: bold;
+                        size: 0.8em;
+                    }
+                    border-bottom: 1px solid indigo;
+                    & .PF_col_enc{
+                        text-align: center;
+                    }
+                    & #PF_col_enc_codigo{
+                        width: 4%;
+                    }
+                    & #PF_col_enc_nombre{
+                        width: 32%;
+                    }
+                    & #PF_col_enc_apellidos{
+                        width: 50%;
+                    }
+                    & #PF_col_enc_foto{
+                        width: 7%;
+                    }
+                    & #PF_col_enc_btn_editar{
+                        width: 7%;
+                    }
+                }
+                & .PF_fila_registro_alumno{
+                    border-bottom: 1px solid;
+                    & .PF_col{
+                        font: {
+                            family: $fuente_estrecha;
+                            size: 1em;
+                        }
+                    }
+                    & .PF_col_codigo{
+                        text-align: center;
+                        font-weight: bold;
+                        width: 4%;
+                    }
+                    & .PF_col_nombre{
+                        width: 32%;
+                    }
+                    & .PF_col_apellidos{
+                        width: 40%;
+                    }
+                    & .PF_col_foto{
+                        text-align: center;
+                        width: 17%;
+                        & .foto_usuario_inline{
+                            width: 100%;
+                        }
+                    }
+                    & .PF_col_btn_editar{
+                        text-align: center;
+                        width: 7%;
+                    }
+                }
+            }
+        }
+        & #PF_contenedor_tabla_baterias_tests{
+            margin: 0%;
+            padding: 0% 0.5em;
+            & #PF_tabla_baterias_tests{
+                width: 90%;
+                @include aspecto_tabla(auto, $color_fondo_tablas);
+                & #PF_fila_encabezados{
+                    font: {
+                        family: $fuente_tablas;
+                        weight: bold;
+                        size: 0.8em;
+                    }
+                    border-bottom: 1px solid indigo;
+                    & .PF_col_enc{
+                        text-align: center;
+                    }
+                    & #PF_col_enc_codigo{
+                        width: 4%;
+                    }
+                    & #PF_col_enc_nombre{
+                        width: 32%;
+                    }
+                    & #PF_col_enc_descripcion{
+                        width: 57%;
+                    }
+                    & #PF_col_enc_btn_izdo{
+                        width: 7%;
+                    }
+                }
+                & .PF_fila_registro_bateria_test{
+                    border-bottom: 1px solid;
+                    & .PF_col{
+                        font: {
+                            family: $fuente_estrecha;
+                            size: 1em;
+                        }
+                    }
+                    & .PF_col_codigo{
+                        text-align: center;
+                        font-weight: bold;
+                        width: 4%;
+                    }
+                    & .PF_col_nombre{
+                        width: 32%;
+                    }
+                    & .PF_col_descripcion{
+                        width: 57%;
+                    }
+                    & .PF_col_btn_izdo{
+                        text-align: center;
+                        width: 7%;
+                    }
+                }
+            }
+        }
+        & #TA_contenedor_tabla{
+            margin: 0%;
+            padding: 0% 0.5em;
+            & #TA_tabla{
+                width: 98%;
+                @include aspecto_tabla(auto, $color_fondo_tablas);
+                & #TA_fila_encabezados{
+                    font: {
+                        family: $fuente_tablas;
+                        weight: bold;
+                        size: 0.8em;
+                    }
+                    border-bottom: 1px solid indigo;
+                    & .TA_col_enc{
+                        text-align: center;
+                    }
+                    & #TA_col_enc_codigo{
+                        width: 4%;
+                    }
+                    & #TA_col_enc_nombre{
+                        width: 20%;
+                    }
+                    & #TA_col_enc_descripcion{
+                        width: 36%;
+                    }
+                    & #TA_col_enc_fechaAsignacion{
+                        width: 10%;
+                    }
+                    & #TA_col_enc_fechaInicio{
+                        width: 10%;
+                    }
+                    & #TA_col_enc_fechaFin{
+                        width: 10%;
+                    }
+                    & #TA_col_enc_nota{
+                        width: 4%;
+                    }
+                    & #TA_col_enc_ejecucion{
+                        display: none;
+                        width: 0%;
+                    }
+                    & #PF_col_enc_btn_retirar{
+                        width: 6%;
+                    }
+                }
+                & .TA_fila_registro_bateria{
+                    border-bottom: 1px solid;
+                    & .TA_col{
+                        font: {
+                            family: $fuente_estrecha;
+                            size: 1em;
+                        }
+                    }
+                    & .TA_col_codigo{
+                        text-align: center;
+                        font-weight: bold;
+                        width: 4%;
+                    }
+                    & .TA_col_nombre{
+                        width: 20%;
+                    }
+                    & .TA_col_descripcion{
+                        width: 36%;
+                    }
+                    & .TA_col_fechaAsignacion{
+                        width: 10%;
+                    }
+                    & .TA_col_fechaInicio{
+                        width: 10%;
+                    }
+                    & .TA_col_fechaFin{
+                        width: 10%;
+                    }
+                    & .TA_col_nota{
+                        width: 4%;
+                    }
+                    & .TA_col_ejecucion{
+                        display: none;
+                        width: 0%;
+                    }
+                    & .TA_col_btn_retirar{
+                        text-align: center;
+                        width: 6%;
+                        & .boton_retirar_asignacion{
+                            width: 100%;
+                            padding: 0.2em;
+                            color: $color_texto_claro;
+                            background-color: $color_fondo_datos_usuario;
+                            border: 1px solid rgb(77, 77, 77);
+                            border-radius: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#TS_contenedor_test{
+    width: 50%;
+    border: 4px double;
+    border-radius: 4px;
+    box-shadow: 5px 5px 15px 5px black;
+    font: {
+        family: $fuente_estrecha;
+    }
+    & #TS_contenedor_nombre{
+        background-color: $color_fondo_principal;
+        color: $color_texto_oscuro;
+        text-align: center;
+        padding-top: 0.5em;
+    }
+    & #TS_contenedor_descripcion{
+        width: 95%;
+        margin: auto;
+        font: {
+            size: 0.8em;
+        }
+    }
+    & #TS_contenedor_encabezado{
+        width: 95%;
+        margin: auto;
+        font: {
+            size: 0.8em;
+        }
+        /*
+        & #TS_contenedor_texto_propio{
+        }
+        */
+        & .TS_medio_adjunto{
+            margin: 0.5em 0.5em 0% 0.5em;
+            text-align: center;
+            & .TS_medio_texto{
+                text-align: justify;
+            }
+            /*
+            & .TS_visor_imagen_card{
+
+            }
+            & .TS_visor_video_card{
+
+            }
+            & .TS_audio_player{
+
+            }*/
+        }
+    }
+    & #TS_contenedor_opciones{
+        border-top: 1px solid;
+        & .TS_contenedor_opcion{
+            margin: 1em 1em 0.5em 1em;
+            & .TS_radio_opcion{
+                margin: 0px 0.5em;
+            }
+            & .TS_imagen_opcion{
+                width: 100px;
+            }
+            & .TS_texto_opcion{
+                margin: 0px 1em 0px 1em;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

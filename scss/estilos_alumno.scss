@@ -1,0 +1,757 @@
+/*PÁGINA DEL ALUMNO*/
+@import 'globales';
+
+//Estilos aislados
+.foto{
+    width: 50%;
+    min-width: 100px;
+}
+.TSE_imagen_opcion{
+    width: 100px;
+}
+
+body{
+    background-color: $color_fondo_principal;
+}
+
+/////////////////////////////
+//  TABLA DE ASIGNACIONES  //
+/////////////////////////////
+@media (max-width: $smartphone){
+    header{
+        background-color: $color_fondo_datos_usuario;
+        & #datos_usuario_conectado{
+            //width: 85%;
+            margin: auto;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            color: $color_texto_claro;
+            font: {
+                family: $fuente_estrecha;
+                size: 1em;
+            }
+            & #AteneaIcono{
+                width: 50px;
+            }
+            & #saludo{
+                padding-right: 0.5em;
+                padding-top: 0.4em;
+                margin-top: 0.5em;
+            }
+            & #PF_nombre{
+                font-style: italic;
+                margin-top: 0.5em;
+                padding-top: 0.4em;
+            }
+            & #contenedor_logout{
+                text-align: center;
+                //padding-bottom: 0.9em;
+                & a{
+                    color: $color_texto_claro;
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
+
+    #PFA_contenedor_tabla{
+        padding-bottom: 1.5em;
+        //ENCABEZADO DE LA TABLA
+        & #PFA_encabezado_tabla{
+            text-align: center;
+            padding: 0.5em 0%;
+            color: $color_texto_oscuro;
+            font: {
+                family: $fuente_general;
+                size: 1.5em;
+            }
+        }
+        & #PFA_tabla{
+            //@include aspecto_tabla(auto, $color_fondo_tablas);
+            //ENCABEZADOS DE LAS COLUMNAS
+            & #PFA_fila_encabezados{
+                border-bottom: 1px solid indigo;
+                font: {
+                    family: $fuente_general;
+                    weight: bold;
+                    size: 0.8em;
+                }
+                & #PFA_col_enc_codigo{
+                    text-align: center;
+                    width: 0%;
+                    display: none;
+                }
+                & #PFA_col_enc_nombre{
+                    text-align: center;
+                    width: 89%;
+                }
+                & #PFA_col_enc_fechaAsignacion{
+                    text-align: center;
+                    width: 0%;
+                    display: none;
+                }
+                & #PFA_col_enc_fechaInicio{
+                    text-align: center;
+                    width: 0%;
+                    display: none;
+                }
+                & #PFA_col_enc_fechaFin{
+                    text-align: center;
+                    width: 0%;
+                    display: none;
+                }
+                & #PFA_col_enc_nota{
+                    text-align: center;
+                    width: 5%;
+                }
+                & #PFA_col_enc_btn_ejecutar{
+                    width: 3%;
+                }
+                & #PFA_col_enc_btn_reset{
+                    width: 3%;
+                }
+            }
+            //CELDAS DE LAS COLUMNAS DE LA TABLA
+            & .PFA_fila_registro_bateria{
+                & .PFA_col{
+                    background-color: $color_fondo_tablas;
+                    font: {
+                        family: $fuente_estrecha;
+                        size: 1em;
+                    }
+                }
+                & .PFA_col_codigo{
+                    text-align: center;
+                    font-weight: bold;
+                    width: 0%;
+                    display: none;
+                }
+                & .PFA_col_nombre{
+                    text-align: center;
+                    width: 89%;
+                }
+                & .PFA_col_fechaAsignacion{
+                    text-align: center;
+                    width: 0%;
+                    display: none;
+                }
+                & .PFA_col_fechaInicio{
+                    text-align: center;
+                    width: 0%;
+                    display: none;
+                }
+                & .PFA_col_fechaFin{
+                    text-align: center;
+                    width: 0%;
+                    display: none;
+                }
+                & .PFA_col_nota{
+                    text-align: center;
+                    width: 5%;
+                }
+                & .PFA_col_btn_ejecutar{
+                    width: 3%;
+                    text-align: center;
+                }
+                & .PFA_col_btn_reset{
+                    width: 3%;
+                    text-align: center;
+                }
+                & .PFA_boton_ejecutar{
+                    width: 100%;
+                    padding: 0.3em;
+                    color: white;
+                    background-color: $color_fondo_datos_usuario;
+                    border: 1px solid $color_bordes;
+                    border-radius: 6px;
+                }
+                & .PFA_boton_reset{
+                    width: 100%;
+                    padding: 0.3em;
+                    color: $color_fondo_datos_usuario;
+                    border: 1px solid $color_bordes;
+                    border-radius: 6px;
+                }
+            }
+        }
+    }
+
+    ///////////////
+    //  BATERÍA  //
+    ///////////////
+    #BTA_contenedor_bateria{
+        background-color: $color_fondo_principal;
+        padding: 0%;
+        //ENCABEZADO
+        & #BTA_contenedor_info_bateria{
+            padding: 0px 0.3em;
+            background-color: #007bff;
+            color: $color_texto_claro;
+            & #BTA_info{
+                text-align: center;
+                margin: 0%;
+                padding: 0.5em 0%;
+                font: {
+                    family: $fuente_general;
+                    size: 1em;
+                }
+            }
+            & #BTA_contenedor_estado_ejecucion{
+                padding: 0% 0.5em 0% 0.5em;
+                & #BTA_tests_respondidos{
+                    text-align: center;
+                    margin: 0%;
+                    font: {
+                        family: $fuente_general;
+                        size: 0.8em;
+                    }
+                }
+                & #BTA_contenedor_barra_progreso{
+                    width: 90%;
+                    margin: 0.5em auto;
+                }
+            }
+            & #BTA_contenedor_btn_detener{
+                & #BTA_btn_detener{
+                    border: 1px solid rgb(141, 141, 141);
+                    border-radius: 6px;
+                    background-color: rgb(97, 97, 97);
+                    margin-right: 0.4em;
+                    margin-top: 0.4em;
+                    color: $color_texto_claro;
+                    & #BTA_texto_boton_detener{
+                        padding: 0.3em 0%;
+                        margin: 0%;
+                        font-size: 0.8em;
+                    }
+                }
+            }
+        }
+        & #TS_contenedor_test{
+            background-color: $color_texto_claro;
+            & #TS_contenedor_encabezado{
+                border-bottom: 1px solid;
+                font-size: 0.8em;
+                & #TS_contenedor_texto_propio{
+                    margin: 0% 1em;
+                    padding-top: 1em;
+                    font-family: $fuente_general;
+                }
+                & .TS_medio_adjunto{
+                    margin: 1em 1em 0% 1em;
+                    text-align: center;
+                    & .TS_medio_texto{
+                        font-family: $fuente_general;
+                        text-align: justify;
+                    }
+                }
+            }
+            & .TS_contenedor_opciones{
+                & .TS_contenedor_opcion{
+                    margin: 1em 1em 0.5em 1em;
+                    font-size: 0.8em;
+                    & .TS_opcion{
+                        margin: 0px 0.5em;
+                    }
+                    & .TS_texto_opcion{
+                        font-family: $fuente_general;
+                        margin: 0px 1em 0px 1em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $min-tablet) and (max-width: $tablet){
+    header{
+        background-color: $color_fondo_datos_usuario;
+        & #datos_usuario_conectado{
+            width: 85%;
+            margin: auto;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            color: $color_texto_claro;
+            font: {
+                family: $fuente_estrecha;
+                size: 1.5em;
+            }
+            & #AteneaIcono{
+                width: 80px;
+            }
+            & #saludo{
+                padding-right: 0.5em;
+                padding-top: 0.4em;
+                margin-top: 0.5em;
+            }
+            & #PF_nombre{
+                font-style: italic;
+                margin-top: 0.5em;
+                padding-top: 0.4em;
+            }
+            & #contenedor_logout{
+                text-align: right;
+                padding-bottom: 0.9em;
+                & a{
+                    color: $color_texto_claro;
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
+    #PFA_contenedor_tabla{
+        padding-bottom: 1.5em;
+        width: 95%;
+        margin: auto;
+        //ENCABEZADO DE LA TABLA
+        & #PFA_encabezado_tabla{
+            text-align: center;
+            padding: 0.5em 0%;
+            color: $color_texto_oscuro;
+            font: {
+                family: $fuente_general;
+                size: 1.5em;
+            }
+        }
+        & #PFA_tabla{
+            @include aspecto_tabla(auto, $color_fondo_tablas);
+            //ENCABEZADOS DE LAS COLUMNAS
+            & #PFA_fila_encabezados{
+                border-bottom: 1px solid indigo;
+                font: {
+                    family: $fuente_general;
+                    weight: bold;
+                    size: 0.8em;
+                }
+                & #PFA_col_enc_codigo{
+                    text-align: center;
+                    width: 5%;
+                }
+                & #PFA_col_enc_nombre{
+                    text-align: center;
+                    width: 54%;
+                }
+                & #PFA_col_enc_fechaAsignacion{
+                    text-align: center;
+                    width: 10%;
+                }
+                & #PFA_col_enc_fechaInicio{
+                    text-align: center;
+                    width: 10%;
+                }
+                & #PFA_col_enc_fechaFin{
+                    text-align: center;
+                    width: 10%;
+                }
+                & #PFA_col_enc_nota{
+                    text-align: center;
+                    width: 5%;
+                }
+                & #PFA_col_enc_btn_ejecutar{
+                    width: 3%;
+                }
+                & #PFA_col_enc_btn_reset{
+                    width: 3%;
+                }
+            }
+            //CELDAS DE LAS COLUMNAS DE LA TABLA
+            & .PFA_fila_registro_bateria{
+                & .PFA_col{
+                    background-color: $color_fondo_tablas;
+                    font: {
+                        family: $fuente_estrecha;
+                        size: 1em;
+                    }
+                }
+                & .PFA_col_codigo{
+                    text-align: center;
+                    font-weight: bold;
+                    width: 5%;
+                }
+                & .PFA_col_nombre{
+                    width: 54%;
+                }
+                & .PFA_col_fechaAsignacion{
+                    text-align: center;
+                    font-size: 0.6em;
+                    width: 10%;
+                }
+                & .PFA_col_fechaInicio{
+                    text-align: center;
+                    font-size: 0.6em;
+                    width: 10%;
+                }
+                & .PFA_col_fechaFin{
+                    text-align: center;
+                    font-size: 0.6em;
+                    width: 10%;
+                }
+                & .PFA_col_nota{
+                    text-align: center;
+                    width: 5%;
+                }
+                & .PFA_col_btn_ejecutar{
+                    width: 3%;
+                    text-align: center;
+                }
+                & .PFA_col_btn_reset{
+                    width: 3%;
+                    text-align: center;
+                }
+                & .PFA_boton_ejecutar{
+                    width: 100%;
+                    padding: 0.3em;
+                    color: white;
+                    background-color: $color_fondo_datos_usuario;
+                    border: 1px solid $color_bordes;
+                    border-radius: 6px;
+                }
+                & .PFA_boton_reset{
+                    width: 100%;
+                    padding: 0.3em;
+                    color: $color_fondo_datos_usuario;
+                    border: 1px solid $color_bordes;
+                    border-radius: 6px;
+                }
+            }
+        }
+    }
+    ///////////////
+    //  BATERÍA  //
+    ///////////////
+    #BTA_contenedor_bateria{
+        background-color: $color_fondo_principal;
+        //padding: 0%;
+        //ENCABEZADO
+        & #BTA_contenedor_info_bateria{
+            width: 90%;
+            margin: 0% auto;
+            padding: 0px 0.3em;
+            background-color: #007bff;
+            color: $color_texto_claro;
+            & #BTA_info{
+                text-align: center;
+                margin: 0%;
+                padding: 0.5em 0%;
+                font: {
+                    family: $fuente_general;
+                    size: 1.5em;
+                }
+            }
+            & #BTA_contenedor_estado_ejecucion{
+                padding: 0% 0.5em 0% 0.5em;
+                & #BTA_tests_respondidos{
+                    padding: 0%;
+                    margin: 0%;
+                    font: {
+                        family: $fuente_general;
+                        size: 1em;
+                    }
+                }
+                & #BTA_contenedor_barra_progreso{
+                    padding: 0%;
+                    margin: 0%;
+                }
+            }
+            & #BTA_contenedor_btn_detener{
+                border: 1px solid rgb(141, 141, 141);
+                border-radius: 6px;
+                background-color: rgb(97, 97, 97);
+                margin: auto 0px;
+                padding: 0.5em;
+                & #BTA_btn_detener{
+                    margin: 0%;
+                    color: $color_texto_claro;
+                    & #BTA_icono_detener{
+                        padding: 0%;
+                    }
+                    & #BTA_texto_boton_detener{
+                        padding: 0%;
+                        margin: 0%;
+                        text-align: center;
+                        font-size: 0.8em;
+
+                    }
+                }
+            }
+        }
+        & #TS_contenedor_test{
+            background-color: $color_texto_claro;
+            width: 90%;
+            margin: 0% auto;
+            & #TS_contenedor_encabezado{
+                border-bottom: 1px solid;
+                & #TS_contenedor_texto_propio{
+                    margin: 0% 1em;
+                    padding-top: 1em;
+                    font-family: $fuente_general;
+                }
+                & .TS_medio_adjunto{
+                    margin: 1em 1em 0% 1em;
+                    text-align: center;
+                    & .TS_medio_texto{
+                        font-family: $fuente_general;
+                        text-align: justify;
+                    }
+                }
+            }
+            & .TS_contenedor_opciones{
+                & .TS_contenedor_opcion{
+                    margin: 1em 1em 0.5em 1em;
+                    & .TS_opcion{
+                        margin: 0px 0.5em;
+                    }
+                    & .TS_texto_opcion{
+                        font-family: $fuente_general;
+                        margin: 0px 1em 0px 1em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $min-computer){
+    header{
+        background-color: $color_fondo_datos_usuario;
+        & #datos_usuario_conectado{
+            width: 85%;
+            margin: auto;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            color: $color_texto_claro;
+            font: {
+                family: $fuente_estrecha;
+                size: 1.5em;
+            }
+            & #AteneaIcono{
+                width: 80px;
+            }
+            & #saludo{
+                padding-right: 0.5em;
+                padding-top: 0.4em;
+                margin-top: 0.5em;
+            }
+            & #PF_nombre{
+                font-style: italic;
+                margin-top: 0.5em;
+                padding-top: 0.4em;
+            }
+            & #contenedor_logout{
+                text-align: right;
+                padding-bottom: 0.8em;
+                & a{
+                    color: $color_texto_claro;
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
+    #PFA_contenedor_tabla{
+        padding-bottom: 1.5em;
+        width: 85%;
+        margin: auto;
+        //ENCABEZADO DE LA TABLA
+        & #PFA_encabezado_tabla{
+            text-align: center;
+            padding: 0.5em 0%;
+            color: $color_texto_oscuro;
+            font: {
+                family: $fuente_general;
+                size: 1.5em;
+            }
+        }
+        & #PFA_tabla{
+            @include aspecto_tabla(auto, $color_fondo_tablas);
+            //ENCABEZADOS DE LAS COLUMNAS
+            & #PFA_fila_encabezados{
+                border-bottom: 1px solid indigo;
+                font: {
+                    family: $fuente_general;
+                    weight: bold;
+                    size: 0.8em;
+                }
+                & #PFA_col_enc_codigo{
+                    text-align: center;
+                    width: 5%;
+                }
+                & #PFA_col_enc_nombre{
+                    text-align: center;
+                    width: 54%;
+                }
+                & #PFA_col_enc_fechaAsignacion{
+                    text-align: center;
+                    width: 10%;
+                }
+                & #PFA_col_enc_fechaInicio{
+                    text-align: center;
+                    width: 10%;
+                }
+                & #PFA_col_enc_fechaFin{
+                    text-align: center;
+                    width: 10%;
+                }
+                & #PFA_col_enc_nota{
+                    text-align: center;
+                    width: 5%;
+                }
+                & #PFA_col_enc_btn_ejecutar{
+                    width: 3%;
+                }
+                & #PFA_col_enc_btn_reset{
+                    width: 3%;
+                }
+            }
+            //CELDAS DE LAS COLUMNAS DE LA TABLA
+            & .PFA_fila_registro_bateria{
+                & .PFA_col{
+                    background-color: $color_fondo_tablas;
+                    font: {
+                        family: $fuente_estrecha;
+                        size: 1em;
+                    }
+                }
+                & .PFA_col_codigo{
+                    text-align: center;
+                    font-weight: bold;
+                    width: 5%;
+                }
+                & .PFA_col_nombre{
+                    width: 54%;
+                }
+                & .PFA_col_fechaAsignacion{
+                    text-align: center;
+                    width: 10%;
+                    font-size: 0.7em;
+                }
+                & .PFA_col_fechaInicio{
+                    text-align: center;
+                    width: 10%;
+                    font-size: 0.7em;
+                }
+                & .PFA_col_fechaFin{
+                    text-align: center;
+                    width: 10%;
+                    font-size: 0.7em;
+                }
+                & .PFA_col_nota{
+                    text-align: center;
+                    width: 5%;
+                }
+                & .PFA_col_btn_ejecutar{
+                    width: 3%;
+                    text-align: center;
+                }
+                & .PFA_col_btn_reset{
+                    width: 3%;
+                    text-align: center;
+                }
+                & .PFA_boton_ejecutar{
+                    width: 100%;
+                    padding: 0.3em;
+                    color: white;
+                    background-color: $color_fondo_datos_usuario;
+                    border: 1px solid $color_bordes;
+                    border-radius: 6px;
+                }
+                & .PFA_boton_reset{
+                    width: 100%;
+                    padding: 0.3em;
+                    color: $color_fondo_datos_usuario;
+                    border: 1px solid $color_bordes;
+                    border-radius: 6px;
+                }
+            }
+        }
+    }
+    ///////////////
+    //  BATERÍA  //
+    ///////////////
+    #BTA_contenedor_bateria{
+        background-color: $color_fondo_principal;
+        padding: 0%;
+        //ENCABEZADO
+        & #BTA_contenedor_info_bateria{
+            width: 80%;
+            margin: 0% auto;
+            padding: 0px 0.3em;
+            background-color: #007bff;
+            color: $color_texto_claro;
+            & #BTA_info{
+                text-align: center;
+                margin: 0%;
+                padding: 0.5em 0%;
+                font: {
+                    family: $fuente_general;
+                    size: 1.5em;
+                }
+            }
+            & #BTA_contenedor_estado_ejecucion{
+                padding: 0% 0.5em 0% 0.5em;
+                & #BTA_tests_respondidos{
+                    padding: 0%;
+                    margin: 0%;
+                    font: {
+                        family: $fuente_general;
+                        size: 1em;
+                    }
+                }
+                & #BTA_contenedor_barra_progreso{
+                    padding: 0%;
+                    margin: 0%;
+                }
+            }
+            & #BTA_contenedor_btn_detener{
+                border: 1px solid rgb(141, 141, 141);
+                border-radius: 6px;
+                background-color: rgb(97, 97, 97);
+                margin: auto 0px;
+                padding: 0.5em;
+                & #BTA_btn_detener{
+                    margin: 0%;
+                    color: $color_texto_claro;
+                    & #BTA_icono_detener{
+                        padding: 0%;
+                    }
+                    & #BTA_texto_boton_detener{
+                        padding: 0%;
+                        margin: 0%;
+                    }
+                }
+            }
+        }
+        & #TS_contenedor_test{
+            background-color: $color_texto_claro;
+            width: 80%;
+            margin: 0% auto;
+            & #TS_contenedor_encabezado{
+                border-bottom: 1px solid;
+                & #TS_contenedor_texto_propio{
+                    margin: 0% 1em;
+                    padding-top: 1em;
+                    font-family: $fuente_general;
+                }
+                & .TS_medio_adjunto{
+                    margin: 1em 1em 0% 1em;
+                    text-align: center;
+                    & .TS_medio_texto{
+                        font-family: $fuente_general;
+                        text-align: justify;
+                    }
+                }
+            }
+            & .TS_contenedor_opciones{
+                & .TS_contenedor_opcion{
+                    margin: 1em 1em 0.5em 1em;
+                    & .TS_opcion{
+                        margin: 0px 0.5em;
+                    }
+                    & .TS_texto_opcion{
+                        font-family: $fuente_general;
+                        margin: 0px 1em 0px 1em;
+                    }
+                }
+            }
+        }
+    }
+}

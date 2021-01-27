@@ -1,0 +1,62 @@
+/*BARRA DE MENÚ PRINCIPAL*/
+$BMP_color_fondo: rgb(73, 73, 73);
+$BMP_color_hover: rgb(31, 223, 248);
+$BMP_color_seleccion: #47a0ff;
+$BMP_color_letras: white;
+$fuente_general: 'Kanit', sans-serif;
+
+@mixin configurar-barra-navegacion( $color_fondo,
+                                    $color_hover,
+                                    $color_letras)
+{
+    background-color: $color_fondo;
+    & ul{
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+    & li{
+        display: inline-block;
+        padding: 0.5em 1em;
+    }
+    & li:hover > a{
+        color: $color_hover;
+    }
+    & a{
+        font: {
+            family: $fuente_general;
+        }
+        text-decoration: none;
+        height: 4em;
+        color: $color_letras;
+    }  
+}
+
+#barra_nav{
+    @include configurar-barra-navegacion(   $BMP_color_fondo,
+                                            $BMP_color_hover,
+                                            $BMP_color_letras);
+}
+.elemento_menu_principal{
+    background-color: $BMP_color_fondo;
+}
+.elemento_menu_principal_seleccionado{
+    background-color: $BMP_color_seleccion;
+}
+
+/*BARRA DE MENÚ DE MEDIOS*/
+$BMM_color_fondo: rgb(73, 73, 73);
+$BMM_color_hover: rgb(31, 223, 248);
+$BMM_color_seleccion: #47a0ff;
+$BMM_color_letras: white;
+
+#barra_nav_medios{
+    @include configurar-barra-navegacion(   $BMM_color_fondo,
+                                            $BMM_color_hover,
+                                            $BMM_color_letras);
+}
+.elemento_menu_medios{
+    background-color: $BMM_color_fondo
+}
+.elemento_menu_medios_seleccionado{
+    background-color: $BMM_color_seleccion;
+}

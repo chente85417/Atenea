@@ -1,0 +1,35 @@
+/////////////////
+// BREAKPOINTS //
+/////////////////
+$smartphone: 360px;
+$min-tablet: 361px;
+$tablet: 768px;
+$min-computer: 769px;
+
+///////////////
+//  COLORES  //
+///////////////
+$color_fondo_principal: lavender;
+$color_fondo_secundario: rgb(196, 195, 195);
+$color_fondo_datos_usuario: #007bff;
+$color_texto_claro: white;
+$color_fondo_claro: white;
+$color_texto_oscuro: black;
+$color_fondo_tablas: rgb(255, 246, 218);
+$color_bordes: rgb(77, 77, 77);
+$color_fondo_fila_resaltada: rgb(218, 251, 255);
+
+///////////////
+//  FUENTES  //
+///////////////
+$fuente_general: 'Kanit', sans-serif;
+$fuente_estrecha: 'Roboto Condensed', sans-serif;
+$fuente_tablas: $fuente_general;
+
+@mixin aspecto_tabla($margen, $color_fondo){
+    margin: $margen;
+    background-color: $color_fondo;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 5px;
+    overflow: hidden;
+}

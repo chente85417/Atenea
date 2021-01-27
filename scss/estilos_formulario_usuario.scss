@@ -1,0 +1,47 @@
+@import 'globales';
+
+$fuente_general: 'Kanit', sans-serif;
+$fuente_usuario: 'Roboto Condensed', sans-serif;
+$color_fondo_global: #007bff;
+
+#FUSR_seccion{
+    width: 85%;
+    margin: 2em auto 0px auto;
+    background-color: $color_fondo_tablas;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 5px;
+    overflow: hidden;
+    & #FUSR_datos_usuario{
+        font-family: $fuente_estrecha;
+        padding: 2em;
+        & .etiqueta{
+            color: $color_texto_oscuro;
+        }
+        & #FUSR_contenedor_foto{
+            & #FUSR_imagen_foto_usuario{
+                width: 150px;
+                margin-bottom: 0.5em;
+                border: solid 1px;
+            }
+            & #FUSR_contenedor_selector_foto{
+                & #boton_seleccionar_foto{
+                    width: 150px;
+                }
+                & #FUSR_label_foto{
+                    display: none;
+                }
+            }
+            & #FUSR_file_foto_usuario{
+                display: none;
+            }
+        }
+    }
+    & #FUSR_contenedor_botones{
+        width: 20%;
+        margin: auto;
+        padding-bottom: 2em;
+        text-align: center;
+    }
+}
+
+
